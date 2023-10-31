@@ -11,3 +11,25 @@
     --green : #7DD91F;
     --soft-black : #393939;
 }
+header{
+    background-color: var(--black);
+}
+#contact{
+    width: 100%;
+    height: 85vh;
+    background: url(./images/contactBg.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#contact form{
+    background-color: var(--black);
+}
+#contact h2{
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--white);
+    font-size: 60px;
+    padding: 20px 0px;
+    text-transform: uppercase;
+    text-align: center;
+}
