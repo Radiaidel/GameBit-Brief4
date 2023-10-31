@@ -11,3 +11,69 @@
     --green : #7DD91F;
     --soft-black : #393939;
 }
+body{
+    background-color: var(--black);
+    color: var(--white);
+}
+header{
+    width: auto;
+    height :30px;
+    background-color: #7DD91F;
+}
+.heading {
+    padding: 30px;
+    font-size: 20px;
+    font-weight: 800;
+    position: relative; /* Ajoutez cette propriété pour positionner correctement l'élément :after */
+}
+.list {
+    font-size: 20px;
+    font-weight: 800;
+    color: #7DD91F;
+}
+
+/* .heading:after {
+    content: '';
+    position: absolute; /* Positionnez l'élément de façon absolue */
+    /* left:0 ;
+    bottom: 2px;
+    width: 20%;
+    border-bottom: 2px solid #7DD91F;
+}  */
+
+.page-link{
+    background: #393939;
+    color: #fafafa;
+    border-color: #7DD91F;
+}
+.page-link:hover{
+    background-color: #7DD91F;
+    color: #fafafa;
+    border-color: #7DD91F;
+}
+.active >.page-link, .page-link.active {
+    background-color: #7DD91F;
+    border-color: #7DD91F;
+}
+
+
+.btn-outline-secondary {
+    color: #fafafa;
+    border-color: #7DD91F;
+    font-size: 20px;
+    font-weight: 500;
+}
+ .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    color: #fafafa;
+    background: #7DD91F;
+    border-color: var(--green);
+    font-size: 20px;
+    font-weight: 500;
+} 
+.btn-primary {
+    color: #fafafa;
+    border-color: #7DD91F;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #7DD91F;
+}
