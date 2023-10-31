@@ -120,6 +120,66 @@
     "Images": ["Image28.jpg", "Image29.jpg", "Image30.jpg"]
   },
   {
+    "ID": "CT001",
+    "Name": "Xbox Wireless Controller",
+    "Category": "Controller",
+    "Description": "The Xbox Wireless Controller is the official controller for Xbox consoles and Windows PCs, featuring Bluetooth connectivity and customizable buttons.",
+    "Price": 59.99,
+    "Page": 1,
+    "Color": "Black",
+    "Count": 0,
+    "QTE": 10,
+    "Images": ["Image49.jpg", "Image50.jpg", "Image51.jpg"]
+  },
+  {
+    "ID": "CT002",
+    "Name": "DualShock 4 Wireless Controller",
+    "Category": "Controller",
+    "Description": "The DualShock 4 is the wireless controller for PlayStation 4, featuring a touchpad, light bar, and built-in speaker for immersive gaming experiences.",
+    "Price": 49.99,
+    "Page": 2,
+    "Color": "Black",
+    "Count": 0,
+    "QTE": 8,
+    "Images": ["Image52.jpg", "Image53.jpg", "Image54.jpg"]
+  },
+  {
+    "ID": "CT003",
+    "Name": "Nintendo Switch Pro Controller",
+    "Category": "Controller",
+    "Description": "The Nintendo Switch Pro Controller is designed for the Nintendo Switch, offering a comfortable grip, motion controls, and HD rumble.",
+    "Price": 69.99,
+    "Page": 3,
+    "Color": "Black",
+    "Count": 0,
+    "QTE": 12,
+    "Images": ["Image55.jpg", "Image56.jpg", "Image57.jpg"]
+  },
+  {
+    "ID": "CT004",
+    "Name": "Logitech F310 Gamepad",
+    "Category": "Controller",
+    "Description": "The Logitech F310 Gamepad is a versatile PC controller with a familiar layout and support for a wide range of games.",
+    "Price": 24.99,
+    "Page": 1,
+    "Color": "Black",
+    "Count": 0,
+    "QTE": 15,
+    "Images": ["Image58.jpg", "Image59.jpg", "Image60.jpg"]
+  },
+  {
+    "ID": "CT005",
+    "Name": "Steam Controller",
+    "Category": "Controller",
+    "Description": "The Steam Controller is designed for PC gaming and offers customizable controls and haptic feedback for a unique gaming experience.",
+    "Price": 49.99,
+    "Page": 2,
+    "Color": "Black",
+    "Count": 0,
+    "QTE": 6,
+    "Images": ["Image61.jpg", "Image62.jpg", "Image63.jpg"]
+  },
+  {
     "ID": "HS002",
     "Name": "HyperX Cloud II Gaming Headset",
     "Category": "Headset",
