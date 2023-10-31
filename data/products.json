@@ -1,5 +1,4 @@
 [
-  
   {
     "ID": "KB001",
     "Name": "Razer BlackWidow Elite",
@@ -10,7 +9,7 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 10,
-    "Images": ["Image1.jpg", "Image2.jpg", "Image3.jpg"]
+    "Images": ["../images/produits/p1-1.png"]
   },
   {
     "ID": "MS001",
@@ -22,7 +21,14 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 15,
-    "Images": ["Image4.jpg", "Image5.jpg", "Image6.jpg"]
+    "Images": ["../images/produits/p2-1-c2.webp","../images/produits/p2-2-c2.webp","../images/produits/p2-3-c2.webp","../images/produits/p2-4-c2.webp"],
+    "Options":[
+      {
+        "Color":"Blue",
+        "Images": ["../images/produits/p2-1-c1.webp","../images/produits/p2-2-c1.webp","../images/produits/p2-3-c1.webp","../images/produits/p2-4-c1.webp"],
+        "Price":9.99  
+      }
+    ]
   },
   {
     "ID": "GC001",
@@ -34,7 +40,7 @@
     "Color": "White",
     "Count": 0,
     "QTE": 5,
-    "Images": ["Image7.jpg", "Image8.jpg", "Image9.jpg"]
+    "Images": ["../images/produits/p3-1.png","../images/produits/p3-2.png","../images/produits/p3-3.png"]
   },
   {
     "ID": "HD001",
@@ -46,7 +52,7 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 8,
-    "Images": ["Image10.jpg", "Image11.jpg", "Image12.jpg"]
+    "Images": ["../images/produits/p4-1.png","../images/produits/p4-2.png","../images/produits/p4-3.png"]
   },
   {
     "ID": "HS001",
@@ -58,7 +64,14 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 12,
-    "Images": ["Image13.jpg", "Image14.jpg", "Image15.jpg"]
+    "Images": ["../images/produits/p5-1-c2.webp","../images/produits/p5-2-c2.webp","../images/produits/p5-3-c2.webp","../images/produits/p5-4-c2.webp"],
+    "Options":[
+      {
+        "Color":"White",
+        "Images": ["../images/produits/p5-1-c1.webp","../images/produits/p5-2-c1.webp","../images/produits/p5-3-c1.webp","../images/produits/p5-4-c1.webp"],
+        "Price":-5.99  
+      }
+    ]
   },
   {
     "ID": "VG001",
@@ -70,7 +83,7 @@
     "Color": "Multi",
     "Count": 0,
     "QTE": 20,
-    "Images": ["Image16.jpg", "Image17.jpg", "Image18.jpg"]
+    "Images": ["../images/produits/p6.png"]
   },
   {
     "ID": "PC001",
