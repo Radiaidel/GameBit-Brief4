@@ -1,13 +1,18 @@
 *{
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: 0 !important;
     text-decoration: none;
     list-style: none;
 }
 :root{
     --black : #1e1e1e;
     --white : #fafafa;
-    --green : #7DD91F;
+    --green : #00ff11;
     --soft-black : #393939;
+}
+
+header{
+    background:var(--black);
+    height: 12vh;
 }
