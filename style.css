@@ -10,13 +10,37 @@
     --white : #fafafa;
     --green : #7DD91F;
     --soft-black : #393939;
+    --font: #55E95E;
 }
 .table-row-5{
-    height: 80px;
+    height: 50px;
+}
+.bg-image{
+    height: 400px;
+    background-image: url(images/head.png);
+    background-size: 100% 400px ;
+}
+.img-fluid2{
+    width: 210px;
+}
+.line{
+    line-height: 1;
+}
+.date{
+    margin-top: 60%;
+}
+.color{
+    color: #E95555;
 }
 
 
-.img-fluid{
+.td{
+    background-color: rgba(85, 233, 94, 0.20)  !important;;
+}
+.th{
+    background-color: var(--font) !important;
+}
+.image{
     width: 60px;
 }
 header{
