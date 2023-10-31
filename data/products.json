@@ -21,7 +21,14 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 15,
-    "Images": ["Image4.jpg", "Image5.jpg", "Image6.jpg"]
+    "Images": ["../images/produits/p2-1-c2.webp","../images/produits/p2-2-c2.webp","../images/produits/p2-3-c2.webp","../images/produits/p2-4-c2.webp"],
+    "Options":[
+      {
+        "Color":"Blue",
+        "Images": ["../images/produits/p2-1-c1.webp","../images/produits/p2-2-c1.webp","../images/produits/p2-3-c1.webp","../images/produits/p2-4-c1.webp"],
+        "Price":9.99  
+      }
+    ]
   },
   {
     "ID": "GC001",
@@ -45,7 +52,7 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 8,
-    "Images": ["../images/produits/p4-1 (1).png","../images/produits/p4-2.png","../images/produits/p4-3.png"]
+    "Images": ["../images/produits/p4-1.png","../images/produits/p4-2.png","../images/produits/p4-3.png"]
   },
   {
     "ID": "HS001",
@@ -57,7 +64,14 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 12,
-    "Images": ["Image13.jpg", "Image14.jpg", "Image15.jpg"]
+    "Images": ["../images/produits/p5-1-c2.webp","../images/produits/p5-2-c2.webp","../images/produits/p5-3-c2.webp","../images/produits/p5-4-c2.webp"],
+    "Options":[
+      {
+        "Color":"White",
+        "Images": ["../images/produits/p5-1-c1.webp","../images/produits/p5-2-c1.webp","../images/produits/p5-3-c1.webp","../images/produits/p5-4-c1.webp"],
+        "Price":-5.99  
+      }
+    ]
   },
   {
     "ID": "VG001",
