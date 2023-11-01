@@ -154,3 +154,21 @@ header{
     background-color: #01eb10;
     color: var(--soft-black);
  }
+ .page-link{
+    background-color: var(--soft-black);
+    border-color: var(--soft-black);
+    color: var(--white);
+    
+ }
+ .page-link:hover{
+    background-color: #00FF10;
+    color: var(--black);
+    border-color: #00FF10;
+    
+ }
+ .page-link:focus{
+    background-color: #00FF10;
+    color: var(--black);
+    border-color: #00FF10;
+    
+ }
