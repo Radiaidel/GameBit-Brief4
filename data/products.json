@@ -21,12 +21,22 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 15,
-    "Images": ["../images/produits/p2-1-c2.webp","../images/produits/p2-2-c2.webp","../images/produits/p2-3-c2.webp","../images/produits/p2-4-c2.webp"],
-    "Options":[
+    "Images": [
+      "../images/produits/p2-1-c2.webp",
+      "../images/produits/p2-2-c2.webp",
+      "../images/produits/p2-3-c2.webp",
+      "../images/produits/p2-4-c2.webp"
+    ],
+    "Options": [
       {
-        "Color":"Blue",
-        "Images": ["../images/produits/p2-1-c1.webp","../images/produits/p2-2-c1.webp","../images/produits/p2-3-c1.webp","../images/produits/p2-4-c1.webp"],
-        "Price":9.99  
+        "Color": "Blue",
+        "Images": [
+          "../images/produits/p2-1-c1.webp",
+          "../images/produits/p2-2-c1.webp",
+          "../images/produits/p2-3-c1.webp",
+          "../images/produits/p2-4-c1.webp"
+        ],
+        "Price": 9.99
       }
     ]
   },
@@ -40,7 +50,11 @@
     "Color": "White",
     "Count": 0,
     "QTE": 5,
-    "Images": ["../images/produits/p3-1.png","../images/produits/p3-2.png","../images/produits/p3-3.png"]
+    "Images": [
+      "../images/produits/p3-1.png",
+      "../images/produits/p3-2.png",
+      "../images/produits/p3-3.png"
+    ]
   },
   {
     "ID": "HD001",
@@ -52,7 +66,11 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 8,
-    "Images": ["../images/produits/p4-1.png","../images/produits/p4-2.png","../images/produits/p4-3.png"]
+    "Images": [
+      "../images/produits/p4-1.png",
+      "../images/produits/p4-2.png",
+      "../images/produits/p4-3.png"
+    ]
   },
   {
     "ID": "HS001",
@@ -64,12 +82,22 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 12,
-    "Images": ["../images/produits/p5-1-c2.webp","../images/produits/p5-2-c2.webp","../images/produits/p5-3-c2.webp","../images/produits/p5-4-c2.webp"],
-    "Options":[
+    "Images": [
+      "../images/produits/p5-1-c2.webp",
+      "../images/produits/p5-2-c2.webp",
+      "../images/produits/p5-3-c2.webp",
+      "../images/produits/p5-4-c2.webp"
+    ],
+    "Options": [
       {
-        "Color":"White",
-        "Images": ["../images/produits/p5-1-c1.webp","../images/produits/p5-2-c1.webp","../images/produits/p5-3-c1.webp","../images/produits/p5-4-c1.webp"],
-        "Price":-5.99  
+        "Color": "White",
+        "Images": [
+          "../images/produits/p5-1-c1.webp",
+          "../images/produits/p5-2-c1.webp",
+          "../images/produits/p5-3-c1.webp",
+          "../images/produits/p5-4-c1.webp"
+        ],
+        "Price": -5.99
       }
     ]
   },
@@ -83,7 +111,7 @@
     "Color": "Multi",
     "Count": 0,
     "QTE": 20,
-    "Images": ["../images/produits/p6.png"]
+    "Images": ["../images/produits/p6.jpg"]
   },
   {
     "ID": "PC001",
@@ -95,7 +123,11 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 3,
-    "Images": ["Image19.jpg", "Image20.jpg", "Image21.jpg"]
+    "Images": [
+      "/images/produits/p7-1.png",
+      "../images/produits/p7-2.png ",
+      "../images/produits/p7-3.png"
+    ]
   },
   {
     "ID": "KB002",
@@ -107,7 +139,7 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 7,
-    "Images": ["Image22.jpg", "Image23.jpg", "Image24.jpg"]
+    "Images": ["../images/produits/p8-1.png"]
   },
   {
     "ID": "MS002",
@@ -119,7 +151,14 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 18,
-    "Images": ["Image25.jpg", "Image26.jpg", "Image27.jpg"]
+    "Images": [
+      "../images/produits/p9-1.jpg",
+      "../images/produits/p9-2.jpg ",
+      "../images/produits/p9-3.jpg",
+      "../images/produits/p9-4.jpg",
+      "../images/produits/p9-4.jpg",
+      "../images/produits/p9-5.jpg"
+    ]
   },
   {
     "ID": "PC002",
@@ -131,7 +170,11 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 6,
-    "Images": ["Image28.jpg", "Image29.jpg", "Image30.jpg"]
+    "Images": [
+      "../images/produits/p10-1.png",
+      "../images/produits/p10-2.png",
+      "../images/produits/p10-3.png"
+    ]
   },
   {
     "ID": "CT001",
@@ -143,7 +186,11 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 10,
-    "Images": ["Image49.jpg", "Image50.jpg", "Image51.jpg"]
+    "Images": [
+      "../images/produits/GC002-1-CB.png",
+      "../images/produits/GC002-2-CB.png",
+      "../images/produits/GC002-4-CB.jpg"
+    ]
   },
   {
     "ID": "CT002",
@@ -155,7 +202,11 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 8,
-    "Images": ["Image52.jpg", "Image53.jpg", "Image54.jpg"]
+    "Images": [
+      "../images/produits/p14-1-CR.png",
+      "../images/produits/p14-2-CR.png",
+      "../images/produits/pg14-3-CR.png"
+    ]
   },
   {
     "ID": "CT003",
@@ -167,7 +218,11 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 12,
-    "Images": ["Image55.jpg", "Image56.jpg", "Image57.jpg"]
+
+    "Images": [
+      "../images/produits/CT003-1-CB.jpg",
+      "../images/produits/CT003-2-CB.png"
+    ]
   },
   {
     "ID": "CT004",
@@ -179,7 +234,10 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 15,
-    "Images": ["Image58.jpg", "Image59.jpg", "Image60.jpg"]
+    "Images": [
+      "../images/produits/CT004-1-CB.png",
+      "../images/produits/CT004-2-CB.png"
+    ]
   },
   {
     "ID": "CT005",
@@ -191,7 +249,11 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 6,
-    "Images": ["Image61.jpg", "Image62.jpg", "Image63.jpg"]
+    "Images": [
+      "../images/produits/CT005-1-CB.png",
+      "../images/produits/CT005-2-CB.png",
+      "../images/produits/CT005-3-CB.png"
+    ]
   },
   {
     "ID": "HS002",
@@ -203,7 +265,15 @@
     "Color": "Red",
     "Count": 0,
     "QTE": 14,
-    "Images": ["Image31.jpg", "Image32.jpg", "Image33.jpg"]
+    "option": {
+      "color": "Black",
+      "size": "Large"
+    },
+    "Images": [
+      "../images/produits/p11-1-c1.png",
+      "../images/produits/p11-2-c1.png",
+      "../images/produits/p11-3-c1.png"
+    ]
   },
   {
     "ID": "VG002",
@@ -215,7 +285,10 @@
     "Color": "Multi",
     "Count": 0,
     "QTE": 30,
-    "Images": ["Image34.jpg", "Image35.jpg", "Image36.jpg"]
+    "Images": [
+      "../images/produits/VG002-1.jpg",
+      "../images/produits/VG002-2.jpg"
+    ]
   },
   {
     "ID": "GC002",
@@ -227,7 +300,11 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 7,
-    "Images": ["Image37.jpg", "Image38.jpg", "Image39.jpg"]
+    "Images": [
+      "../images/produits/GC002-1-CB.png",
+      "../images/produits/GC002-2-CB.png",
+      "../images/produits/GC002-4-CB.jpg"
+    ]
   },
   {
     "ID": "HD002",
@@ -239,7 +316,11 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 5,
-    "Images": ["Image40.jpg", "Image41.jpg", "Image42.jpg"]
+    "Images": [
+      "../images/produits/HD002-1-CB.png",
+      "../images/produits/HD002-2-CB.png",
+      "../images/produits/HD002-3-CB.png"
+    ]
   },
   {
     "ID": "KB003",
@@ -251,7 +332,11 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 9,
-    "Images": ["Image43.jpg", "Image44.jpg", "Image45.jpg"]
+    "Images": [
+      "../images/produits/KB003-1-cb.png",
+      "../images/produits/KB003-2-cb.png",
+      "../images/produits/KB003-3-cb.png"
+    ]
   },
   {
     "ID": "MS003",
@@ -263,6 +348,10 @@
     "Color": "Black",
     "Count": 0,
     "QTE": 11,
-    "Images": ["Image46.jpg", "Image47.jpg", "Image48.jpg"]
+    "Images": [
+      "../images/produits/MS003-1-CB.png",
+      "../images/produits/MS003-2-CB.png",
+      "../images/produits/MS003-3-CB.png"
+    ]
   }
 ]
