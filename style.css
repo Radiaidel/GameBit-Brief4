@@ -1,14 +1,14 @@
 *{
     box-sizing: border-box;
-    padding: 0 !important;
-    margin: 0 !important;
-    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none !important; 
     list-style: none;
 }
 :root{
     --black : #1e1e1e;
     --white : #fafafa;
-    --green : #00ff11;
+    --green : #00FF10;
     --soft-black : #393939;
 }
 
@@ -16,3 +16,59 @@ header{
     background:var(--black);
     height: 12vh;
 }
+.container{
+    background: var(--black);
+}
+ .closebtn {
+    cursor: pointer;
+ }  
+.navigation{
+    height: 7%;
+}
+.details{
+    border: 2px solid var(--green);
+}
+.reviews{
+    border: 2px solid rgb(87, 84, 84); 
+}
+
+.product-name{
+    font-size: 1.7em;
+}
+
+/* .colorbtn div , .icons .facebook{
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+    background: rosybrown;
+} */
+.navigation .details{
+    border: 2px solid var(--green);
+}
+
+.btn-addcart{
+    background-color: #00FF10;
+}
+
+
+.ligne{
+    width: 4em;
+    height: 0.1em;
+    background-color: #00FF10;
+}
+ .btn-moins , .btn-plus{
+    background-color: var(--green);
+ }
+ .stars{
+    color: var(--green);
+ }
+ .cardcontent{
+    background-color: var(--soft-black);
+ }
+ .customize{
+    color: var(--green);
+    border: 2px solid var(--green);
+ }
+ .addcart{
+    background-color: var(--green);
+ }
