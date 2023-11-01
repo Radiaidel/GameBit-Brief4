@@ -12,16 +12,29 @@
     --soft-black : #393939;
     --font: #55E95E;
 }
-.table-row-5{
-    height: 50px;
+body{
+    background-color: #f9f9f9;
+}
+.btn-bg{
+    background: var(--font);
+}
+.height{
+    height: 70px;
+    
+}
+.container a{
+    text-decoration: none;
 }
 .bg-image{
-    height: 400px;
+    height: 380px;
     background-image: url(images/head.png);
-    background-size: 100% 400px ;
+    background-size: 100% 380px ;
 }
 .img-fluid2{
     width: 210px;
+}
+.margin{
+    margin-right: 9%;
 }
 .line{
     line-height: 1;
@@ -32,16 +45,26 @@
 .color{
     color: #E95555;
 }
+.footer{
+    height: 120px;
+    background-image: url(images/tri.png);
+    background-size: 100% 400px ;
+}
 
 
 .td{
-    background-color: rgba(85, 233, 94, 0.20)  !important;;
+    background-color: rgba(85, 233, 94, 0.20)  !important;
+    
 }
 .th{
     background-color: var(--font) !important;
 }
 .image{
     width: 60px;
+}
+.souris{
+    width: 40px;
+    height: 40px;
 }
 header{
     background-color: var(--black);
