@@ -60,7 +60,7 @@ header{
     background-color: var(--green);
  }
  .stars{
-    color: var(--green);
+    color: #ffd60a;
  }
  .cardcontent{
     background-color: var(--soft-black);
@@ -71,4 +71,28 @@ header{
  }
  .addcart{
     background-color: var(--green);
+ }
+ .widthc{
+    width: 300px;
+    background-color: var(--soft-black);
+ }
+ .color1{
+    color: var(--green);
+ }
+
+ .btn-cust{
+    border-color: #00FF10 !important;
+    color: #00FF10;
+ }
+ .btn:hover{
+    border-color:  #00FF10 ;
+    color: var(--soft-black);
+    background-color: #00FF10;
+ }
+ .btn-add{
+    background-color: #00FF10;
+ }
+ .btn-add:hover{
+    background-color: #01eb10;
+    color: var(--soft-black);
  }
