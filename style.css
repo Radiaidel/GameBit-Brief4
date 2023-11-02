@@ -42,11 +42,26 @@ div.button{
     width: 20%!important;
 }
 .btn-primary{
-    /* bs-btn-bg: #00FF10; */
      background-color:#393939 ;
      border: #00FF10;
      --bs-btn-hover-bg: #00FF10;
 }
 .btn{
     --bs-btn-font-size: 1.5rem;
+}
+.background{
+    background-color: #393939;
+}
+h1{
+    color: #55E95E;
+    font-size: 70PX;
+    font-weight: bold;
+}
+.carousel-item{
+    height:  700px;
+    
+}
+element style{
+    align-items: center!important;
+    text-align: center;
 }
