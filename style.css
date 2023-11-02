@@ -1,14 +1,14 @@
 *{
     box-sizing: border-box;
-    padding: 0 ;
-    margin: 0 ;
-    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none !important; 
     list-style: none;
 }
 :root{
     --black : #1e1e1e;
     --white : #fafafa;
-    --green : #00ff11;
+    --green : #00FF10;
     --soft-black : #393939;
     --font: #55E95E;
 }
@@ -93,6 +93,70 @@ header{
     background:#1E1E1E;
     height: 12vh;
 }
+.container-personnalisation{
+    background: var(--black);
+}
+ .closebtn {
+    cursor: pointer;
+ }  
+.navigation{
+    height: 7%;
+}
+.details{
+    border: 2px solid var(--green);
+}
+.reviews{
+    border: 2px solid rgb(87, 84, 84); 
+}
+
+.product-name{
+    font-size: 1.7em;
+}
+.navigation .details{
+    border: 2px solid var(--green);
+}
+
+.btn-addcart{
+    background-color: #00FF10;
+}
+
+
+.ligne{
+    width: 4em;
+    height: 0.1em;
+    background-color: #00FF10;
+}
+ .btn-moins , .btn-plus{
+    background-color: var(--green);
+ }
+ .stars{
+    color: #ffd60a;
+ }
+ .cardcontent{
+    background-color: var(--soft-black);
+ }
+ .customize{
+    color: var(--green);
+    border: 2px solid var(--green);
+ }
+ .addcart{
+    background-color: var(--green);
+ }
+ .widthc{
+    width: 300px;
+    background-color: var(--soft-black);
+ }
+ .color1{
+    color: var(--green);
+ }
+
+ .btn-cust{
+    border-color: #00FF10 !important;
+    color: #00FF10;
+ }
+ .btn:hover{
+    border-color:  #00FF10 ;
+ }
 .bodyc{
     background-color: var(--black);
 }
@@ -113,11 +177,7 @@ header{
     background-color: #00FF10 !important;
     color: var(--black) !important;
 }
-.active{
-    background-color: #00FF10 !important;
-    color: var(--black) !important;
-    font-weight: bold;
-}
+
 .widthc{
     width: 300px;
 }
@@ -191,3 +251,4 @@ header{
     box-shadow: none ;
     
 }
+
