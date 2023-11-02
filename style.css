@@ -71,19 +71,20 @@ body{
 } */
 #contact{
     width: 100%;
-    height: 85vh;
-    background: url(./images/contactBg.png) no-repeat;
+    height: fit-content;
+    background: url(./images/contactBg.png) ;
     background-size: cover;
     background-position: center;
 }
 #contact form{
-    background-color: var(--black);
+    background-color: rgba(30, 30, 30, 0.65);
+    backdrop-filter: blur(12.5px);
 }
 #contact h2{
     color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--white);
-    font-size: 60px;
+    font-size: 50px;
     padding: 20px 0px;
     text-transform: uppercase;
     text-align: center;
@@ -132,6 +133,9 @@ header{
 .widthc{
     width: 300px;
 }
+.widthf{
+    width:fit-content;
+}
 .bgc{
     background-color: #393939;
 }
@@ -159,6 +163,7 @@ header{
     border-color: var(--soft-black);
     color: var(--white);
     
+    
  }
  .page-link:hover{
     background-color: #00FF10;
@@ -170,5 +175,23 @@ header{
     background-color: #00FF10;
     color: var(--black);
     border-color: #00FF10;
-    
  }
+ .area{
+    resize: none;
+    height: 150px;
+ }
+.hit{
+    height: 50px;
+    width: 240px;
+}
+.font{
+    border-color: #00FF10 ;
+    background-color: #1E1E1E;
+    color: #5f5f5f;  
+}
+.font::placeholder{
+    color: #5f5f5f;
+}
+.black{
+    background-color: #00FF10;
+}
