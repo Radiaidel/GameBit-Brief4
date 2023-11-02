@@ -102,7 +102,7 @@ body{
   }
 
 header{
-    background:#393939;
+    background:#1E1E1E;
     height: 12vh;
 }
 .bodyc{
@@ -187,11 +187,19 @@ header{
 .font{
     border-color: #00FF10 ;
     background-color: #1E1E1E;
-    color: #5f5f5f;  
+    color: white !important;  
 }
 .font::placeholder{
     color: #5f5f5f;
 }
 .black{
     background-color: #00FF10;
+  
+}
+.font:focus{
+    border-color: #00FF10 ;
+    background-color: #1E1E1E;
+    color: #5f5f5f;  
+    box-shadow: none ;
+    
 }
