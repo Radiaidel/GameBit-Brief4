@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="../images/icon.png" type="image/x-icon">
-    <script src="script.js" defer></script>
+    <script src="../script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </head>
 
@@ -110,7 +110,7 @@
             <tbody>
               <tr>
                 <th class="td align-middle">Subtotal  :</th>
-                <td class="td align-middle text-end">1174.00$</td>
+                <td class="td align-middle text-end" id="subTotal">1174.00$</td>
               </tr>
               <tr >
                 <th class="align-middle">Tax 20% :</th>
@@ -124,9 +124,9 @@
           </table>
         </div>
     </div>
-    <div class="container  d-flex justify-content-around flex-wrap mt-5">
-        <a href="#" class="btn btn-bg btn-sm w-25 shadow p-3 mb-5  rounded fw-bold">Continue Shopping <img src="../images/Shopping Cart.png" alt="icone"></a>
-        <a href="#" class="btn btn-bg btn-sm w-25 shadow p-3 mb-5  rounded fw-bold">Print <img src="../images/Print.png" alt="icone"></a>
+    <div class="container  d-flex justify-content-around flex-wrap mt-5" id="print-btns">
+        <a href="./Catalogue.html" class="btn btn-bg btn-sm w-25 shadow p-3 mb-5  rounded fw-bold">Continue Shopping <img src="../images/Shopping Cart.png" alt="icone"></a>
+        <button type="button" class="btn btn-bg btn-sm w-25 shadow p-3 mb-5  rounded fw-bold" onclick="printPage()">Print <img src="../images/Print.png" alt="icone"></button>
         <a href="#" class="btn btn-bg btn-sm w-25 shadow p-3 mb-5  rounded fw-bold">Checkout <img src="../images/check.png" alt="icone"></a>
     </div>
     <div class="footer"></div>

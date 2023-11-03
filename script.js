@@ -1,9 +1,16 @@
 let products = [];
 let cart = [];
 let itemsPerPage = 8;
-let currentPage = 1;
+// let currentPage = 1;
 let cards = [];
 
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
 
 function fetchData() {
   fetch('../data/products.json').then((response) => {
@@ -45,11 +52,13 @@ function categories(){
   });
 }
 
-function displayData() {
+function displayData(currentPage) {
   let array = document.querySelectorAll(".card");
   for (var i = 0; i < array.length; i++) {
     if (i >= (currentPage - 1) * itemsPerPage && i < currentPage * itemsPerPage) {
       array[i].classList.remove('d-none'); 
+    }else{
+      array[i].classList.add('d-none'); 
 
     }
   }
@@ -122,10 +131,7 @@ function createElements() {
 }
 
 function printPage() {
-  document.getElementById("print-btns").style.display = "none";
   window.print();
-  document.getElementById("print-btns").style.display = "flex";
-
 }
 
 function addToCart(elem) {
@@ -139,8 +145,13 @@ function addToCart(elem) {
 
 function filterByCategory(elm) {
   if (elm === 'All') {
-    displayData()
+    displayData(1);
+    document.getElementById("paginate").classList.add("d-flex"); 
+    document.getElementById("paginate").classList.remove("d-none"); 
+
   } else {
+    document.getElementById("paginate").classList.add("d-none"); 
+    document.getElementById("paginate").classList.remove("d-flex"); 
     cards.forEach(card => {
       if (card.classList.contains(elm)) {
         card.classList.remove('d-none');
@@ -184,7 +195,7 @@ function removeProductFromCart(productId) {
 function addToCart() {
   cart.forEach(elem => {
     let card = document.createElement("div");
-    card.className = `card`;
+    card.classList = `card`;
 
     let img = document.createElement("img");
     img.src = elem.Images[0];
@@ -197,10 +208,6 @@ function addToCart() {
     let description = document.createElement("p");
     description.innerHTML = elem.Description;
     description.classList = "card-text";
-
-    let rate = document.createElement('div');
-    rate.innerHTML = elem.Rate;
-    rate.classList = "icons";
 
     let price = document.createElement('span');
     price.innerHTML = "$"+elem.Price;
@@ -338,7 +345,29 @@ function validateForm(event) {
   return false;
 }
 
+function closeCart() {
+  document.getElementById("cart").style.display = "none";
+}
+function openCart() {
+  document.getElementById("cart").style.display = "flex";
+  if (document.getElementById("mySidenav").style.width = "250px") {
+    closeNav();
+  }
+}
+
+function calculateTotal() {
+  let total = 0;
+  for (const elem of cart) {
+      total += elem.Price * elem.quantity;
+  }
+  return total;
+}
 
 window.addEventListener("load",()=>{
-  displayData();
+  displayData(1);
 })
+
+function paginate(page) {
+  currentPage = page;
+  displayData(page);
+}
