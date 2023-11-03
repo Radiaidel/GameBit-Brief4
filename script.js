@@ -216,17 +216,12 @@ function addToCart(elem) {
     let btns = document.createElement('div');
     btns.classList = "price";
 
-    let btnOutline = document.createElement('button');
-    btnOutline.type = "button";
-    btnOutline.innerHTML = "Personalize";
-    btnOutline.classList = "btn btn-outline-success";
-
     let btn = document.createElement('button');
     btn.type = "button";
-    btn.innerHTML = "Add To Cart";
-    btn.classList = "btn btn-success";
+    btn.innerHTML = "Remove";
+    btn.classList = "btn btn-danger";
     btn.addEventListener("click",()=>{
-      addToCart(elem);
+      removeProductFromCart(elem.ID);
     })
 
     card.appendChild(img);
@@ -235,8 +230,6 @@ function addToCart(elem) {
     card.appendChild(price);
     card.appendChild(btns);
 
-
-    btns.appendChild(btnOutline);
     btns.appendChild(btn);
 
     Items.appendChild(card);
