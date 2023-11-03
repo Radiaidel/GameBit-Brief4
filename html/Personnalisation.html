@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="GameBit - Votre source pour tout ce qui concerne le gaming.">
-    <meta name="keywords" content="gaming, ecommerce, jeux vidéo, consoles, accessoires">
+    <meta name="keywords" content="gaming, ecommerce, jeux vidÃ©o, consoles, accessoires">
     <meta name="author" content="Votre Nom ou Nom de l'entreprise">
     <title>GameBit</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -23,9 +23,9 @@
     </style>
 </head>
 
-<body>
+<body style="background-color: #1e1e1e;">
     <div class="container container-personnalisation m-auto">
-        <div class="closebtn fs-1 text-end text-white">
+        <div id="closebtn" class="closebtn fs-1 text-end text-white">
             &times;
         </div>
         <div class="top-section d-flex flex-wrap ">
@@ -66,25 +66,29 @@
                     <!-- <span class="reviews px-5 py-3 text-white">Reviews</span> -->
                 </div>
                 <div class="details h-75 position-relative p-3">
-                    <div class="product-name text-white">
+                    <div class="product-name text-white" id="productname">
                         Cataclysm gaming mouse
                     </div>
-                    <div class="description my-2 text-white">
+                    <div class="description my-2 text-white" id="descriptionproduct">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply
                         dummy text of the printing and typesetting industry.
                     </div>
                     <div class="section-of-caracteristique mt-5 ">
+                        <div id="caracsection">
 
+                        </div>
 
                         <div
                             class="qte-prc d-flex justify-content-between align-items-center position-absolute bottom-0 w-100 mb-3">
                             <div class="qte d-flex align-items-center ">
-                                <div class="btn-moins text-center   rounded-3 glyphicon glyphicon-minus p-2 "></div>
-                                <div class="qte text-center fs-2 p-2 text-white ">1</div>
-                                <div class="btn-plus text-center  rounded-3 glyphicon glyphicon-plus p-2 "></div>
+                                <div class="btn-moins text-center   rounded-3 glyphicon glyphicon-minus p-2 "
+                                    id="minusbtn"></div>
+                                <div class="qte text-center fs-2 p-2 text-white " id="qteinner">1</div>
+                                <div class="btn-plus text-center  rounded-3 glyphicon glyphicon-plus p-2 " id="plusbtn">
+                                </div>
                             </div>
                             <div class="prc px-5 text-white fs-3">
-                                Price <span class="text-danger fs-2">$9.99</span>
+                                Price <span class="text-danger fs-2" id="priceinner">$9.99</span>
                             </div>
                         </div>
                     </div>
@@ -93,7 +97,7 @@
                 <div class=" d-flex align-items-center justify-content-between mt-4 ">
 
                     <div class="btn-addcart px-5 py-4 rounded-5 ">
-                        <a href="" class="text-black">ADD TO CART</a>
+                        <a href="" class="text-black" id="addcart">ADD TO CART</a>
                     </div>
                     <div class="share d-flex align-items-center gap-5">
                         <p class="fs-3" style="color:rgb(128, 126, 126);">share</p>
@@ -116,67 +120,70 @@
                 <div class="ligne m-auto mt-3"></div>
             </div>
 
-           
 
-                <div class=" d-flex flex-wrap justify-content-center gap-5">
-                    <!-- <div class="col-lg-4 col-md-12">     -->
-                        <div class="widthc d-flex flex-column justify-content-center bgc mt-5 mb-5 p-4 rounded-4 card">
-                            <img src="../images/GameBitLogo.png" class="align-self-center w-75" alt="image">
-                            <h5 class="text-center text-white card-title mb-4 fs-2">Cataclysm gaming mouse</h5>
-                            <p class="text-center text-white card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                            <div class="d-flex my-4 gap-2 align-self-center">
-                              <span class=" stars fa fa-star fs-3"></span>
-                              <span class=" stars fa fa-star fs-3"></span>
-                              <span class=" stars fa fa-star fs-3"></span>
-                              <span class=" stars fa fa-star fs-3"></span>
-                              <span class=" stars fa fa-star fs-3"></span>
 
-                          </div>
-                            <p class="text-center color1 fs-1 ">$9.99</p>
-                            <div class="d-flex flex-row justify-content-center gap-4 mt-3">
-                              <button type="button" class="btn btn-cust rounded-5 py-3 px-5">customize</button>
-                              <button type="button" class="btn btn-add rounded-5 py-3 px-5">Add to cart</button>
-                            </div>
-                        </div>
-                    <!-- </div> -->
-                    <div class="widthc d-flex flex-column justify-content-center bgc mt-5 mb-5 p-4 rounded-4 card">
-                        <img src="../images/GameBitLogo.png" class="align-self-center w-75" alt="image">
-                        <h5 class="text-center text-white card-title mb-4 fs-2">Cataclysm gaming mouse</h5>
-                        <p class="text-center text-white card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                        <div class="d-flex my-4 gap-2 align-self-center">
-                          <span class=" stars fa fa-star fs-3"></span>
-                          <span class=" stars fa fa-star fs-3"></span>
-                          <span class=" stars fa fa-star fs-3"></span>
-                          <span class=" stars fa fa-star fs-3"></span>
-                          <span class=" stars fa fa-star fs-3"></span>
+            <div class=" d-flex flex-wrap justify-content-center gap-5" id="relatedproduct">
+                <!-- <div class="col-lg-4 col-md-12">     -->
+                <div class="widthc d-flex flex-column justify-content-center bgc mt-5 mb-5 p-4 rounded-4 card">
+                    <img src="../images/GameBitLogo.png" class="align-self-center w-75" alt="image">
+                    <h5 class="text-center text-white card-title mb-4 fs-2" id="productname">Cataclysm gaming mouse</h5>
+                    <p class="text-center text-white card-text" id="description">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry</p>
+                    <div class="d-flex my-4 gap-2 align-self-center">
+                        <span class=" stars fa fa-star fs-3"></span>
+                        <span class=" stars fa fa-star fs-3"></span>
+                        <span class=" stars fa fa-star fs-3"></span>
+                        <span class=" stars fa fa-star fs-3"></span>
+                        <span class=" stars fa fa-star fs-3"></span>
 
-                      </div>
-                        <p class="text-center color1 fs-1 ">$9.99</p>
-                        <div class="d-flex flex-row justify-content-center gap-4 mt-3">
-                          <button type="button" class="btn btn-cust rounded-5 py-3 px-5">customize</button>
-                          <button type="button" class="btn btn-add rounded-5 py-3 px-5">Add to cart</button>
-                        </div>
                     </div>
-                    <div class="widthc d-flex flex-column justify-content-center bgc mt-5 mb-5 p-4 rounded-4 card">
-                        <img src="../images/GameBitLogo.png" class="align-self-center w-75" alt="image">
-                        <h5 class="text-center text-white card-title mb-4 fs-2">Cataclysm gaming mouse</h5>
-                        <p class="text-center text-white card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                        <div class="d-flex my-4 gap-2 align-self-center">
-                          <span class=" stars fa fa-star fs-3"></span>
-                          <span class=" stars fa fa-star fs-3"></span>
-                          <span class=" stars fa fa-star fs-3"></span>
-                          <span class=" stars fa fa-star fs-3"></span>
-                          <span class=" stars fa fa-star fs-3"></span>
-
-                      </div>
-                        <p class="text-center color1 fs-1 ">$9.99</p>
-                        <div class="d-flex flex-row justify-content-center gap-4 mt-3">
-                          <button type="button" class="btn btn-cust rounded-5 py-3 px-5">customize</button>
-                          <button type="button" class="btn btn-add rounded-5 py-3 px-5">Add to cart</button>
-                        </div>
+                    <p class="text-center color1 fs-1 " id="price">$9.99</p>
+                    <div class="d-flex flex-row justify-content-center gap-4 mt-3">
+                        <button type="button" class="btn btn-cust rounded-5 py-3 px-5" id="customize">customize</button>
+                        <button type="button" class="btn btn-add rounded-5 py-3 px-5" id="addcart">Add to cart</button>
                     </div>
                 </div>
-       
+                <!-- </div> -->
+                <div class="widthc d-flex flex-column justify-content-center bgc mt-5 mb-5 p-4 rounded-4 card">
+                    <img src="../images/GameBitLogo.png" class="align-self-center w-75" alt="image">
+                    <h5 class="text-center text-white card-title mb-4 fs-2" id="productname">Cataclysm gaming mouse</h5>
+                    <p class="text-center text-white card-text" id="description">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry</p>
+                    <div class="d-flex my-4 gap-2 align-self-center">
+                        <span class=" stars fa fa-star fs-3"></span>
+                        <span class=" stars fa fa-star fs-3"></span>
+                        <span class=" stars fa fa-star fs-3"></span>
+                        <span class=" stars fa fa-star fs-3"></span>
+                        <span class=" stars fa fa-star fs-3"></span>
+
+                    </div>
+                    <p class="text-center color1 fs-1 " id="price">$9.99</p>
+                    <div class="d-flex flex-row justify-content-center gap-4 mt-3">
+                        <button type="button" class="btn btn-cust rounded-5 py-3 px-5" id="customize">customize</button>
+                        <button type="button" class="btn btn-add rounded-5 py-3 px-5" id="addcart">Add to cart</button>
+                    </div>
+                </div>
+                <div class="widthc d-flex flex-column justify-content-center bgc mt-5 mb-5 p-4 rounded-4 card">
+                    <img src="../images/GameBitLogo.png" class="align-self-center w-75" alt="image">
+                    <h5 class="text-center text-white card-title mb-4 fs-2" id="productname">Cataclysm gaming mouse</h5>
+                    <p class="text-center text-white card-text" id="description">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry</p>
+                    <div class="d-flex my-4 gap-2 align-self-center">
+                        <span class=" stars fa fa-star fs-3"></span>
+                        <span class=" stars fa fa-star fs-3"></span>
+                        <span class=" stars fa fa-star fs-3"></span>
+                        <span class=" stars fa fa-star fs-3"></span>
+                        <span class=" stars fa fa-star fs-3"></span>
+
+                    </div>
+                    <p class="text-center color1 fs-1 " id="price">$9.99</p>
+                    <div class="d-flex flex-row justify-content-center gap-4 mt-3">
+                        <button type="button" class="btn btn-cust rounded-5 py-3 px-5" id="customize">customize</button>
+                        <button type="button" class="btn btn-add rounded-5 py-3 px-5" id="addcart">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>

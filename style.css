@@ -256,6 +256,11 @@ div.button{
     margin-top: 20%!important; 
     
 }
+#cart{
+    position: fixed;
+    background-color: rgba(30, 30, 30, 0.65);
+    backdrop-filter: blur(12.5px);
+}
 #intro{
     background-image: url(./images/bg-main.jpg) ;
     background-repeat:no-repeat;
@@ -274,10 +279,10 @@ div.button{
     width: 50%;
 }
 .background{
-    background-color: #393939!important;
+    background-color: #1E1E1E!important;
 }
 h1{
-    color: #55E95E;
+    color: #00FF10;
     font-size: 50PX;
     font-weight: bold;
     margin-top: 10%!important;
@@ -303,3 +308,8 @@ footer{
     
 }
 
+@media screen and (max-width:700px){
+    #small-about{
+        flex-direction: column;
+    }
+}
