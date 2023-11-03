@@ -33,6 +33,9 @@ fetchData().then((result) => {
   createElements(result);  
 });
 
+
+
+
 function categories(){
   let catArray = ["All","Mouse","Keyboard","Gaming-Console","Monitor","Headset","Video-Game","Gaming-PC","Controller"];
 
@@ -125,10 +128,80 @@ function createElements() {
 
     Cards.appendChild(card);
 
+
+  
+          card.addEventListener("click", () => {
+            let selectedItemId = elem.ID;
+            window.location.href = "Personnalisation.html?id=" + selectedItemId;
+          });
+
     console.log("hhhh");
 });
 
 }
+/************************************************************************************************* */
+/************************************************************************************************* */
+/************************************************************************************************* */
+/************************************************************************************************* */
+/************************************************************************************************* */
+function getProductById(productId) {
+    return new Promise((resolve, reject) => {
+      if (products.length === 0) {
+        return reject(new Error('Les données ne sont pas encore chargées.'));
+      }
+  
+      const product = products.find((product) => product.ID == productId);
+  
+      if (product) {
+        resolve(product);
+      } else {
+        reject(new Error('Produit introuvable'));
+      }
+    });
+  }
+  
+  
+
+// Fonction pour afficher les données du produit
+function displayProductDetails(product) {
+    // Trouver les éléments HTML où vous voulez afficher les données
+    const productNameElement = document.getElementById("productname");
+    const productDescriptionElement = document.getElementById("descriptionproduct");
+
+    // Mettre à jour les éléments HTML avec les données du produit
+    productNameElement.textContent = product.Name;
+    productDescriptionElement.textContent = product.Description;
+
+    // Vous pouvez également mettre à jour d'autres éléments comme le prix, les images, etc.
+}
+
+// Attendre que le document soit chargé
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedItemId = urlParams.get("id");
+  
+    getProductById(selectedItemId)
+      .then((product) => {
+        displayProductDetails(product);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  });
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 function printPage() {
   window.print();
