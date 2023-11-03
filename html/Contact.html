@@ -66,39 +66,39 @@
 </main> -->
 
     <main id="contact" class="d-flex flex-column justify-content-center align-items-center">
-        <form class="w-50 mb-3 rounded-3 shadow-lg px-5" id="contactForm" onsubmit="return validateForm(event)">
+        <form class=" m-4 rounded-3 shadow-lg px-5 h-100" id="contactForm" onsubmit="return validateForm(event)">
             <h2>contact us</h2>
             <div class="row mb-4 flex-wrap">
                 <div class="col">
                     <label for="fname" class="form-label text-light fs-3">First Name</label>
-                    <input type="text" class="form-control" id="FN" placeholder="First name">
+                    <input type="text" class="form-control hit font" id="FN" placeholder="First name">
                     <div class="invalid-feedback">Le prénom est invalide.</div>
                 </div>
                 <div class="col">
                     <label for="lname" class="form-label text-light fs-3">Last Name</label>
-                    <input type="text" name="lname" id="lname" class="form-control" placeholder="Last name">
+                    <input type="text" name="lname" id="lname" class="form-control hit font" placeholder="Last name">
                     <div class="invalid-feedback">Le nom de famille est invalide.</div>
                 </div>
             </div>
             <div class="row mb-4">
                 <div class="col">
                     <label for="email" class="form-label text-light fs-3">Email address</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+                    <input type="email" class="form-control hit font" name="email" id="email" placeholder="name@example.com">
                     <div class="invalid-feedback">Veuillez entrer une adresse e-mail valide.</div>
                 </div>
                 <div class="col">
                     <label for="pnum" class="form-label text-light fs-3">Phone Number</label>
-                    <input type="tel" class="form-control" name="pnum" id="pnum" placeholder="+212711223344">
+                    <input type="tel" class="form-control hit font" name="pnum" id="pnum" placeholder="+212711223344">
                     <div class="invalid-feedback">Veuillez entrer un numéro de téléphone valide (+212 suivi de 9 chiffres).</div>
                 </div>
             </div>
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="message"></textarea>
-                <label for="message">Comments</label>
+                <textarea class="form-control font" placeholder="Leave a comment here" id="message"></textarea>
+                <label for="message" class="color5">Comments</label>
             </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary me-md-2" type="button" onclick="return resetForm()">Cancel</button>
-                <button class="btn btn-primary" type="submit">Submit</button>
+            <div class="my-3 gap-2 d-flex justify-content-end">
+                <button class="btn btn-outline-success me-md-2" type="button" onclick="return resetForm()">Cancel</button>
+                <button class="btn btn-outline-success black text-dark" type="submit">Submit</button>
             </div>
         </form>
     </main>
