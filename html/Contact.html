@@ -21,34 +21,152 @@
         <h2>Header</h2>
     </header>
     <main id="contact" class="d-flex flex-column justify-content-center align-items-center">
-        <form class="w-50 mb-3 rounded-3 shadow-lg px-5">
+        <form class="w-50 mb-3 rounded-3 shadow-lg px-5" id="contactForm" onsubmit="return validateForm(event)">
             <h2>contact us</h2>
             <div class="row mb-4 flex-wrap">
                 <div class="col">
                     <label for="fname" class="form-label text-light fs-3">First Name</label>
-                    <input type="text" class="form-control" placeholder="First name">
+                    <input type="text" class="form-control" id="FN" placeholder="First name">
+                    <div class="invalid-feedback">Le prénom est invalide.</div>
                 </div>
                 <div class="col">
                     <label for="lname" class="form-label text-light fs-3">Last Name</label>
                     <input type="text" name="lname" id="lname" class="form-control" placeholder="Last name">
+                    <div class="invalid-feedback">Le nom de famille est invalide.</div>
                 </div>
             </div>
             <div class="row mb-4">
                 <div class="col">
                     <label for="email" class="form-label text-light fs-3">Email address</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">    
+                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+                    <div class="invalid-feedback">Veuillez entrer une adresse e-mail valide.</div>
                 </div>
                 <div class="col">
                     <label for="pnum" class="form-label text-light fs-3">Phone Number</label>
-                    <input type="tel" class="form-control" name="pnum" id="pnum" placeholder="+212711223344">    
+                    <input type="tel" class="form-control" name="pnum" id="pnum" placeholder="+212711223344">
+                    <div class="invalid-feedback">Veuillez entrer un numéro de téléphone valide (+212 suivi de 9 chiffres).</div>
                 </div>
             </div>
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                <label for="floatingTextarea">Comments</label>
-              </div>
+                <textarea class="form-control" placeholder="Leave a comment here" id="message"></textarea>
+                <label for="message">Comments</label>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary me-md-2" type="button" onclick="return resetForm()">Cancel</button>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
         </form>
     </main>
+    <div class="modal" tabindex="-1" role="dialog" id="successModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thank You for your message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Ici!!, USER INFORMATION -->
+                    <p id="modal-content"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"onclick="return resetForm()">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function resetForm() {
+            var form = document.getElementById("contactForm");
+            form.reset();
+
+            // Réinitialisez les messages d'erreur en appelant resetErrorFeedback pour chaque champ
+            var firstName = document.getElementById("FN");
+            var lastName = document.getElementById("lname");
+            var email = document.getElementById("email");
+            var phone = document.getElementById("pnum");
+            var message = document.getElementById("message");
+
+            resetErrorFeedback(firstName);
+            resetErrorFeedback(lastName);
+            resetErrorFeedback(email);
+            resetErrorFeedback(phone);
+            resetErrorFeedback(message);
+        }
+
+        function showErrorFeedback(inputElement, message) {
+            inputElement.classList.add('is-invalid');
+            var invalidFeedback = inputElement.nextElementSibling;
+            invalidFeedback.textContent = message;
+        }
+
+        function resetErrorFeedback(inputElement) {
+            inputElement.classList.remove('is-invalid');
+            var invalidFeedback = inputElement.nextElementSibling;
+            invalidFeedback.textContent = '';
+        }
+
+        function validateForm(event) {
+            event.preventDefault(); // Empêche la soumission par défaut du formulaire
+            var firstName = document.getElementById("FN").value;
+            var lastName = document.getElementById("lname").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("pnum").value;
+            var message = document.getElementById("message").value;
+            // Expressions régulières pour valider les champs
+            var namePattern = /^[A-Za-z\s]{3,50}$/;
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            var phonePattern = /^\+212\d{9}$|^\d{10}$/;
+            var messagePattern = /^.{1,1000}$/;
+            // Array pour stocker les erreurs
+            var errors = [];
+            if (!namePattern.test(firstName)) {
+                showErrorFeedback(document.getElementById("FN"), "First name is invalid.");
+                errors.push("First name is invalid.");
+            } else {
+                resetErrorFeedback(document.getElementById("FN"));
+            }
+            if (!namePattern.test(lastName)) {
+                showErrorFeedback(document.getElementById("lname"), "Last name is invalid.");
+                errors.push("Last name is invalid..");
+            } else {
+                resetErrorFeedback(document.getElementById("lname"));
+            }
+            if (!emailPattern.test(email)) {
+                showErrorFeedback(document.getElementById("email"), "Please enter a valid email address.");
+                errors.push("Please enter a valid email address.");
+            } else {
+                resetErrorFeedback(document.getElementById("email"));
+            }
+
+            if (!phonePattern.test(phone)) {
+                showErrorFeedback(document.getElementById("pnum"), "Please enter a valid phone number (+212 followed by 9 digits).");
+                errors.push("Please enter a valid phone number (+212 followed by 9 digits).");
+            } else {
+                resetErrorFeedback(document.getElementById("pnum"));
+            }
+
+            if (!messagePattern.test(message)) {
+                showErrorFeedback(document.getElementById("message"), "The message must be between 1 and 1000 characters.");
+                errors.push("The message must be between 1 and 1000 characters.");
+            } else {
+                resetErrorFeedback(document.getElementById("message"));
+            }
+
+            if (errors.length > 0) {
+                return false; // Le formulaire n'est pas valide
+            }
+
+           // Le formulaire est valide,  la popup 
+           var modalContent = document.getElementById("modal-content");
+           modalContent.innerHTML = "<span class='text'>Prénom :</span> " + firstName + "&nbsp;<span class='blue-text'>Nom de famille :</span> " + lastName + "<br><span class='text'>Email :</span> " + email + "<br><span class='text'>Téléphone :</span> " + phone + "<br><span class='text'>Message :</span> " + message;
+           
+            // Afficher la popup
+            var myModal = new bootstrap.Modal(document.getElementById('successModal'));
+            myModal.show();
+            return false;
+        }
+    </script>
 </body>
 
 </html>
