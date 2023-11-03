@@ -189,7 +189,7 @@ header{
 }
 
 .widthc{
-    width: 300px;
+    width: 100px;
 }
 .widthf{
     width:fit-content;
@@ -261,4 +261,15 @@ header{
     box-shadow: none ;
     
 }
-
+#intro{
+    background-image: url(./images/bg-main.jpg) ;
+    background-repeat:no-repeat;
+    background-size: cover;
+    height: 87vh;
+}
+#takelook{
+    background: var(--green);
+}
+#cardstatistics{
+    width: 50%;
+}
