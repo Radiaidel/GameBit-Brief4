@@ -11,22 +11,42 @@
     <title>GameBit</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="./images/GameBitLogo.png">
+    <link rel="icon" href="../images/icon.png" type="image/x-icon">
     <script src="script.js" defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <style>
+
+        #contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .text-primary {
+            color: #00ff11 !important;
+        }
+
+    </style>
 </head>
 
 <body>
-    <div id="cart" class="position-fixed z-2 h-100 fixed-right">
+    <div id="cart" class="z-2 h-100 w-25">
         <button type="button">&times;</button>
         <div id="cart-items"></div>
+        <div id="c-btns">
+            <a href="./html/Devis.html">Devis</a>
+            <a href="#">Order</a>
+        </div>
     </div>
+<body style="background-color: #1E1E1E;">
     <header class="d-flex justify-content-between align-items-center w-100 ">
         <img src="images/GameBitLogo.png" alt="GameBit logo" width="150" height="150">
         <nav>
-            <ul class="d-flex">
+            <ul class="d-flex m-0">
                 <li class="mx-4"><a href="#" class="text-white text-decoration-none">Home</a></li>
                 <li class="mx-4"><a href="#" class="text-white text-decoration-none">Catalogue</a></li>
                 <li class="mx-4"><a href="#" class="text-white text-decoration-none">About us</a></li>
@@ -38,6 +58,365 @@
             </ul>
         </nav>
     </header>
+
+    <!-- <header>
+            <nav class="navbar navbar-expand-lg  w-100 p-5" style="background-color: #1E1E1E; height: 12vh;">
+                <div class=" d-flex justify-content-between align-items-center w-100 " style=" height: 12vh;">
+                    <a class="navbar-brand" href="#">
+                        <img src="./images/GameBitLogo.png" alt="Logo" style="max-width: 150px;">
+                    </a>
+                    <button style="color: #00ff11;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon " style="color: #00ff11;"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="height: 12vh;">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-3" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-3" href="./html/Catalogue.html">Catalogue</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-3" href="./html/About.html">About us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-3" href="./html/Contact.html">Contact us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-3" href="#">
+                                    <i class="fas fa-shopping-cart" style="color: #00ff11;"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header> -->
+<!--         
+        <header>
+            <nav class="navbar navbar-expand-sm" style="height: 12vh; background-color: #1E1E1E;">
+                <div class="container-fluid" style="height: 12vh; background-color: #1E1E1E;">
+                    <a class="navbar-brand" href="#">
+                        <img src="./images/GameBitLogo.png" alt="Logo" style="max-width: 150px;">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" style="color: white !important;">
+                        <span class="navbar-toggler-icon" style="color: white !important;"></span>
+                    </button>
+        
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar" style="height: 12vh; background-color: #000000 !important ;">
+                        <ul class="navbar-nav" style="z-index: 456 ;">
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-3" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-3" href="./html/Catalogue.html">Catalogue</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-3" href="./html/About.html">About us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-3" href="./html/Contact.html">Contact us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white p-3" href="#">
+                                    <i class="fas fa-shopping-cart" style="color: #00ff11;"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header> -->
+        
+
+
+    <div id="intro" class="bg-image d-flex align-items-center">
+        <div class="container">
+            <div class="row p-3 p-md-5">
+                <div class="col-md-12 text-white">
+                    <p class="fs-4" style="color: #919191;">NEW MICE COLLECTION</p>
+                    <h1 class="fw-bolder" style="font-size: 3.5em;">STEELSERIES</h1>
+                    <p class="fs-4" style="color: #919191;">New mice collection is ready to be bought!</p>
+                    <a href="#" id="takelook" class="btn  px-4 text-black">Take Look</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="my-5">
+        <div class="container ">
+            <div class="row m-auto" >
+                <div class="col-md-4 col-sm-6">
+                    <div class="card text-center text-white m-auto" style="background-color: #393939; border-bottom: 5px solid #00ff11 !important;">
+                        <img src="./images/menubu.png" class="card-img-top m-auto w-25  p-3" alt="Image 1">
+                        <div class="card-body">
+                            <h5 class="card-title">+20</h5>
+                            <p class="card-text">Menu items</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card text-center text-white m-auto" style="background-color: #393939; border-bottom: 5px solid #00ff11 !important;">
+                        <img src="./images/EMJ.png" class="card-img-top m-auto w-25  p-3" alt="Image 2"  >
+                        <div class="card-body">
+                            <h5 class="card-title">400</h5>
+                            <p class="card-text">Happy customers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card text-center text-white m-auto " style="background-color: #393939; border-bottom: 5px solid #00ff11 !important;">
+                        <img src="./images/Stt.png" class="card-img-top m-auto w-25 p-3" alt="Image 3">
+                        <div class="card-body ">
+                            <h5 class="card-title">250</h5>
+                            <p class="card-text">Five stars</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="my-5 p-3" style="background-color: #393939; ">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-inner ">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-evenly"> 
+                        <img src="../images/Logitec.png" class="d-block img-fluid" alt="Logitech">
+                        <img src="../images/epic.png" class="d-block img-fluid" alt="Epic">
+                        <img src="../images/nvidia.png" class="d-block img-fluid" alt="Nvidia">
+                    </div>
+                </div>
+                <div class="carousel-item col-12 col-sm-12">
+                    <div class="d-flex justify-content-evenly">
+                        <img src="../images/obisoft.png" class="d-block img-fluid " alt="Ubisoft" >
+                        <img src="../images/msi.png" class="d-block img-fluid " alt="MSI">
+                        <img src="../images/Play_station-removebg-preview.png" class="d-block img-fluid " alt="PlayStation" >
+                    </div>
+                </div>
+            </div>
+    
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    
+
+    <section class="my-5">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between px-3 px-md-5">
+                <h2 class="text-white fw-bold text-center">
+                    <span style="color: #00ff11;">B</span>EST SELLERS
+                    <div style="width: 20%; height: 20%; background-color: #00ff11;"></div>
+                </h2>
+                <div class="col-md-8">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold" style="color: #00ff11;" href="#">Top</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-bold" href="#">Mouse</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-bold" href="#">Laptop&Pc</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-bold" href="#">Headphone</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <div class="widthc d-flex flex-column justify-content-center bgc mt-4 mb-4 rounded-4 card py-4"
+                    style="width: 100%; height: fit-content;  max-width: 20rem;">
+                    <img src="../images/GameBitLogo.png" class="align-self-center w-75" alt="image">
+                    <h5 class="text-center text-white card-title mb-3 fs-4">Cataclysm gaming mouse</h5>
+                    <p class="text-center text-white card-text">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry</p>
+                    <div class="d-flex my-3 gap-2 align-self-center">
+                        <span class="stars fa fa-star fs-5"></span>
+                        <span class="stars fa fa-star fs-5"></span>
+                        <span class="stars fa fa-star fs-5"></span>
+                        <span class="stars fa fa-star fs-5"></span>
+                        <span class="stars fa fa-star fs-5"></span>
+
+                    </div>
+                    <p class="text-center color1 fs-3">$9.99</p>
+                    <div class="d-flex flex-row justify-content-center gap-2 mt-2">
+                        <button type="button" class="btn btn-cust rounded-5 py-2 px-3">Customize</button>
+                        <button type="button" class="btn btn-add rounded-5 py-2 px-3">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="widthc d-flex flex-column justify-content-center bgc mt-4 mb-4 rounded-4 card py-4"
+                style="width: 100%; height: fit-content;  max-width: 20rem;">
+                <img src="../images/GameBitLogo.png" class="align-self-center w-75" alt="image">
+                <h5 class="text-center text-white card-title mb-3 fs-4">Cataclysm gaming mouse</h5>
+                <p class="text-center text-white card-text">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry</p>
+                <div class="d-flex my-3 gap-2 align-self-center">
+                    <span class="stars fa fa-star fs-5"></span>
+                    <span class="stars fa fa-star fs-5"></span>
+                    <span class="stars fa fa-star fs-5"></span>
+                    <span class="stars fa fa-star fs-5"></span>
+                    <span class="stars fa fa-star fs-5"></span>
+
+                </div>
+                <p class="text-center color1 fs-3">$9.99</p>
+                <div class="d-flex flex-row justify-content-center gap-2 mt-2">
+                    <button type="button" class="btn btn-cust rounded-5 py-2 px-3">Customize</button>
+                    <button type="button" class="btn btn-add rounded-5 py-2 px-3">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="widthc d-flex flex-column justify-content-center bgc mt-4 mb-4 rounded-4 card py-4"
+            style="width: 100%; height: fit-content;  max-width: 20rem;">
+            <img src="../images/GameBitLogo.png" class="align-self-center w-75" alt="image">
+            <h5 class="text-center text-white card-title mb-3 fs-4">Cataclysm gaming mouse</h5>
+            <p class="text-center text-white card-text">Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry</p>
+            <div class="d-flex my-3 gap-2 align-self-center">
+                <span class="stars fa fa-star fs-5"></span>
+                <span class="stars fa fa-star fs-5"></span>
+                <span class="stars fa fa-star fs-5"></span>
+                <span class="stars fa fa-star fs-5"></span>
+                <span class="stars fa fa-star fs-5"></span>
+
+            </div>
+            <p class="text-center color1 fs-3">$9.99</p>
+            <div class="d-flex flex-row justify-content-center gap-2 mt-2">
+                <button type="button" class="btn btn-cust rounded-5 py-2 px-3">Customize</button>
+                <button type="button" class="btn btn-add rounded-5 py-2 px-3">Add to Cart</button>
+            </div>
+        </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="newsletter w-100"
+        style="background-image: url('./images/contactBg.png'); background-size: cover; background-position: center;">
+        <div class="container m-auto p-3 p-md-5">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div
+                        class="content d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                        <div class="left d-flex align-items-center">
+                            <img src="./images/newsletter.png" alt="Casque Image">
+                            <div class="text-white text-center text-md-start">
+                                <h2>Join our newsletter and get offers</h2>
+                                <p>Sign up for our newsletter</p>
+                            </div>
+                        </div>
+                        <form class="w-100 mt-4 mt-md-0">
+                            <div class="input-group">
+                                <input type="email" class="form-control py-4" placeholder="Enter your email">
+                                <span class="input-group-btn">
+                                    <button class="btn" type="submit"
+                                        style="background-color: #00ff11; padding: 12px 15px;">Subscribe Now</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="contact" class="py-5 text-center" style="background:none;">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-uppercase" style="color: #00ff11;">Find <span class="text-white">Us</span></h2>
+                <div class="divider mt-3 mb-4 m-auto"
+                    style="width: 80px; height: 3px; background-color: #00ff11; margin: 0 auto;"></div>
+                <p class="text-white fs-5 m-4">Game Bit is the first chain of stores specializing in high-end computer
+                    hardware for professionals.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4 w-75 my-2">
+                <div class="card border-0 custom-card">
+                    <div class="card-body">
+                        <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Address</h5>
+                        <p class="card-text">123 Main Street, City, Country</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 w-75  my-2">
+                <div class="card border-0 custom-card">
+                    <div class="card-body ">
+                        <i class="fas fa-phone fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Phone</h5>
+                        <p class="card-text">+1 (123) 456-7890</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 w-75  my-2">
+                <div class="card border-0 custom-card">
+                    <div class="card-body">
+                        <i class="fas fa-envelope fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Email</h5>
+                        <p class="card-text">info@gamebit.com</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <style>
+            #contact {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .text-primary {
+                color: #00ff11 !important;
+            }
+
+            .custom-card {
+                height: 100%;
+                width: 100%;
+            }
+
+            iframe {
+                width: 100vw;
+            }
+        </style>
+        <div class="mt-5">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3601.7989204846917!2d-9.242436986180243!3d32.267052929439906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sma!4v1698969890920!5m2!1sen!2sma"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -1,16 +1,16 @@
 *{
     box-sizing: border-box;
-    padding: 0 ;
-    margin: 0 ;
-    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none !important; 
     list-style: none;
 }
 :root{
     --black : #1e1e1e;
     --white : #fafafa;
-    --green : #00ff11;
+    --green : #00FF10;
     --soft-black : #393939;
-    --font: #55E95E;
+    --font: #00ff10;
 }
 body{
     background-color: #f9f9f9;
@@ -67,7 +67,7 @@ body{
     height: 40px;
 }
 
-body{
+.body5{
     width: 100%;
     height: fit-content;
     background: url(./images/contactBg.png) ;
@@ -97,6 +97,70 @@ header{
     background:#1E1E1E;
     height: 12vh;
 }
+.container-personnalisation{
+    background: var(--black);
+}
+ .closebtn {
+    cursor: pointer;
+ }  
+.navigation{
+    height: 7%;
+}
+.details{
+    border: 2px solid var(--green);
+}
+.reviews{
+    border: 2px solid rgb(87, 84, 84); 
+}
+
+.product-name{
+    font-size: 1.7em;
+}
+.navigation .details{
+    border: 2px solid var(--green);
+}
+
+.btn-addcart{
+    background-color: #00FF10;
+}
+
+
+.ligne{
+    width: 4em;
+    height: 0.1em;
+    background-color: #00FF10;
+}
+ .btn-moins , .btn-plus{
+    background-color: var(--green);
+ }
+ .stars{
+    color: #ffd60a;
+ }
+ .cardcontent{
+    background-color: var(--soft-black);
+ }
+ .customize{
+    color: var(--green);
+    border: 2px solid var(--green);
+ }
+ .addcart{
+    background-color: var(--green);
+ }
+ .widthc{
+    width: 300px;
+    background-color: var(--soft-black);
+ }
+ .color1{
+    color: var(--green);
+ }
+
+ .btn-cust{
+    border-color: #00FF10 !important;
+    color: #00FF10;
+ }
+ .btn:hover{
+    border-color:  #00FF10 ;
+ }
 .bodyc{
     background-color: var(--black);
 }
@@ -117,14 +181,10 @@ header{
     background-color: #00FF10 !important;
     color: var(--black) !important;
 }
-.active{
-    background-color: #00FF10 !important;
-    color: var(--black) !important;
-    font-weight: bold;
-}
-.widthc{
-    width: 300px;
-}
+
+/* .widthc{
+    width: 100px;
+} */
 .widthf{
     width:fit-content;
 }
@@ -193,6 +253,11 @@ header{
     background-color: #1E1E1E;
     color: #5f5f5f;  
     box-shadow: none ;
+}
+div.button{
+    color: #00ff10;
+    margin-bottom: 20%!important;
+    margin-top: 20%!important; 
     
 }
 .color5{
@@ -202,50 +267,63 @@ form {
     width: 300px;
     margin: 0 auto;
 }
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+#cart{
+    position: fixed;
+    background-color: rgba(30, 30, 30, 0.65);
+    backdrop-filter: blur(12.5px);
 }
-
-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
+#intro{
+    background-image: url(./images/bg-main.jpg) ;
+    background-repeat:no-repeat;
+    background-size: cover;
+    height: 87vh;
 }
-
-#confirmationMessage {
-    text-align: center;
+#takelook{
+    background: var(--green);
+}
+.btn-primary{
+     background-color:#393939 ;
+     border: #00FF10;
+     --bs-btn-hover-bg: #00FF10;
+}
+#cardstatistics{
+    width: 50%;
+}
+.background{
+    background-color: #1E1E1E!important;
+}
+h1{
+    color: #00FF10;
+    font-size: 50PX;
     font-weight: bold;
-    margin-top: 20px;
-    color: #007bff;
+    margin-top: 10%!important;
 }
-.red-text {
-    color: #393939;
+.carousel-item-active{
+    height: 70%!important;
+    
+}
+element style{
+    align-items: center!important;
+    text-align: center;
+}
+.embed-responsive-item{
+        width: 50% !important;
+        height: 100% !important;
+        border-radius: 5% !important;
+        margin-top: 2%!important;
+        padding: 10px!important;
+       
+}
+footer{
+    background-color: #1E1E1E!important;
+    
+}
+.height{
+    height: 200px;
 }
 
-.blue-text {
-    margin-left: 5%;
-    color: #393939;
-}
-
-.green-text {
-    color: #393939;
-}
-
-.purple-text {
-    color: #393939;
-}
-
-.orange-text {
-    color: #393939;
-}
-
-.btn-secondary {
-    color: #fff !important;
-    background-color: #7DD91F !important;
-    outline: none !important;
+@media screen and (max-width:700px){
+    #small-about{
+        flex-direction: column;
+    }
 }
