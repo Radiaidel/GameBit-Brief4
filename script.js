@@ -236,7 +236,17 @@ function addToCart() {
     Cards.appendChild(card);
 });
 }
+// Fonction pour calculer le total du panier :
+function calculateTotal() {
+  let total = 0;
+  for (const elem of cart) {
+      total += elem.Price * elem.quantity;
+  }
+  return total;
+}
+//fonction pour :
 
+//Formulaire :
 function resetForm() {
   var form = document.getElementById("contactForm");
   form.reset();
