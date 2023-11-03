@@ -235,6 +235,6 @@ function addToCart() {
 
 
 
-window.addEventListener("l",()=>{
+window.addEventListener("load",()=>{
   displayData();
 })
