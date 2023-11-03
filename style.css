@@ -10,7 +10,7 @@
     --white : #fafafa;
     --green : #00FF10;
     --soft-black : #393939;
-    --font: #55E95E;
+    --font: #00ff10;
 }
 body{
     background-color: #f9f9f9;
@@ -249,6 +249,11 @@ header{
     background-color: #1E1E1E;
     color: #5f5f5f;  
     box-shadow: none ;
+}
+div.button{
+    color: #00ff10;
+    margin-bottom: 20%!important;
+    margin-top: 20%!important; 
     
 }
 #intro{
@@ -260,6 +265,41 @@ header{
 #takelook{
     background: var(--green);
 }
+.btn-primary{
+     background-color:#393939 ;
+     border: #00FF10;
+     --bs-btn-hover-bg: #00FF10;
+}
 #cardstatistics{
     width: 50%;
 }
+.background{
+    background-color: #393939!important;
+}
+h1{
+    color: #55E95E;
+    font-size: 50PX;
+    font-weight: bold;
+    margin-top: 10%!important;
+}
+.carousel-item-active{
+    height: 70%!important;
+    
+}
+element style{
+    align-items: center!important;
+    text-align: center;
+}
+.embed-responsive-item{
+        width: 50% !important;
+        height: 100% !important;
+        border-radius: 5% !important;
+        margin-top: 2%!important;
+        padding: 10px!important;
+       
+}
+footer{
+    background-color: #1E1E1E!important;
+    
+}
+
