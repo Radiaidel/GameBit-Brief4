@@ -10,3 +10,4 @@ About us:Une brève description de l'entreprise, son histoire, et aussi les part
 Contact us: Un formulaire que les visiteurs peuvent remplir pour envoyer un message électronique directement à l'adresse e-mail de l'entreprise . Ce formulaire inclure des champs tels que le nom le prénom, l'adresse e-mail, le numéro de téléphone et aussi le message.
 Le panier:Le panier affichera le total des produits ajoutés par l'utilisateur, avec la possibilité d'augmenter ou de réduire la quantité. et le montant total à payer, Il comprendra aussi deux boutons : un pour valider la commande et un autre pour demander un devis.
 
+https://www.figma.com/file/BOgw61J1WcIpQhVZgGFS1M/GameBit?type=design&node-id=0%3A1&mode=design&t=0APT9i3agewyI9Ht-1
