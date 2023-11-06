@@ -125,7 +125,6 @@ function createElements() {
 
     Cards.appendChild(card);
 
-    console.log("hhhh");
 });
 
 }
@@ -182,20 +181,25 @@ if (foundProduct) {
 }
 
 function removeProductFromCart(productId) {
-  const productIndex = cart.findIndex((product) => product.ID === productId);
-  if (productIndex !== -1) {
-    cart.splice(productIndex, 1);
-    console.log(`Produit avec l'ID ${productId} supprimé du panier.`);
-  } else {
-    console.log(`Produit avec l'ID ${productId} non trouvé dans le panier.`);
-  }
+  console.log(cart);
+
+  let copy = cart.filter((elem)=> elem.ID != productId);
+  cart = [...copy];
+  // const productIndex = cart.findIndex((product) => product.ID === productId);
+  // if (productIndex !== -1) {
+  //   cart.splice(productIndex, 1);
+  //   console.log(`Produit avec l'ID ${productId} supprimé du panier.`);
+  // } else {
+  //   console.log(`Produit avec l'ID ${productId} non trouvé dans le panier.`);
+  // }
+  console.log(cart);
 }
 
 
 function addToCart(elem) {
   let Items = document.getElementById("cart-items")
     let card = document.createElement("div");
-    card.classList = `card`;
+    card.classList = `card d-flex bg-dark w-75`;
 
     let img = document.createElement("img");
     img.src = elem.Images[0];
