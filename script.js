@@ -192,8 +192,8 @@ function removeProductFromCart(productId) {
 }
 
 
-function addToCart() {
-  cart.forEach(elem => {
+function addToCart(elem) {
+  let Items = document.getElementById("cart-items")
     let card = document.createElement("div");
     card.classList = `card`;
 
@@ -232,7 +232,6 @@ function addToCart() {
     card.appendChild(img);
     card.appendChild(title);
     card.appendChild(description);
-    card.appendChild(rate);
     card.appendChild(price);
     card.appendChild(btns);
 
@@ -240,8 +239,7 @@ function addToCart() {
     btns.appendChild(btnOutline);
     btns.appendChild(btn);
 
-    Cards.appendChild(card);
-});
+    Items.appendChild(card);
 }
 // Fonction pour calculer le total du panier :
 function calculateTotal() {

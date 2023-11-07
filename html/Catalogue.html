@@ -17,36 +17,71 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<div id="cart" class="z-2 h-100 flex-column ">
+<div id="cart" class="z-2 h-100 flex-column px-3">
   <div class="close">
       <button type="button" onclick="closeCart()">&times;</button>
   </div>
-  <div id="cart-items"></div>
+  <div id="cart-items" class="d-flex h-auto gap-1 my-2 color8 rounded-3 py-3" > 
+    <div class="w-25 px-2 rounded-3"> <img src="../images/clavier.png" class="w-100 h-100 color7 rounded-1" alt="produit"></div>
+    <div>
+      <h1 class="fs-5 m-0 text-white">Cataclysm gaming mouse</h1>
+    <p class="m-2 text-white">lorem - lorem - lorem - lorem</p>
+  <div class="d-flex justify-content-between hi ">
+    <div class="d-flex gap-1"><img src="../images/Reduce.png" alt=""><p class="text-white">0</p>
+      <img src="../images/Sum.png" alt=""></div>
+    <div class="d-flex"><p class="text-white">9.99$</p> <img src="../images/Remove.png" class="" alt="icone"></div>
+</div>
+</div>
+  </div>
+  <div id="cart-items" class="d-flex h-auto gap-1 my-2 color8 rounded-3 py-3" > 
+    <div class="w-25 px-2 rounded-3"> <img src="../images/1 21.png" class="w-100 h-100 color7 rounded-1" alt="produit"></div>
+    <div>
+      <h1 class="fs-5 m-0 text-white">Cataclysm gaming mouse</h1>
+    <p class="m-2 text-white">lorem - lorem - lorem - lorem</p>
+  <div class="d-flex justify-content-between hi ">
+    <div class="d-flex gap-1"><img src="../images/Reduce.png" alt=""><p class="text-white">0</p>
+      <img src="../images/Sum.png" alt=""></div>
+    <div class="d-flex"><p class="text-white">9.99$</p> <img src="../images/Remove.png" class="" alt="icone"></div>
+</div>
+</div>
+  </div>
+  <div id="cart-items" class="d-flex h-auto gap-1 my-2 color8 rounded-3 py-3" > 
+    <div class="w-25 px-2 rounded-3"> <img src="../images/2 1.png" class="w-100 h-100 color7 rounded-1" alt="produit"></div>
+    <div>
+      <h1 class="fs-5 m-0 text-white">Cataclysm gaming mouse</h1>
+    <p class="m-2 text-white">lorem - lorem - lorem - lorem</p>
+  <div class="d-flex justify-content-between hi ">
+    <div class="d-flex gap-1"><img src="../images/Reduce.png" alt=""><p class="text-white">0</p>
+      <img src="../images/Sum.png" alt=""></div>
+    <div class="d-flex"><p class="text-white">9.99$</p> <img src="../images/Remove.png" class="" alt="icone"></div>
+</div>
+</div>
+  </div>
+
   <div id="c-btns">
-      <a href="./html/Devis.html" class="fs-5">Devis</a>
+      <a href="Devis.html" class="fs-5">Devis</a>
       <a href="#" class="text-dark fs-5">Order</a>
   </div>
 </div>
 <div id="mySidenav" class="sidenav">
   <button type="button" class="close" onclick="closeNav()">&times;</button>
   <div class="container">
-      <li class="mx-4"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-      <li class="mx-4"><a href="./html/Catalogue.html" class="text-white text-decoration-none">Catalogue</a></li>
-      <li class="mx-4"><a href="./html/About.html" class="text-white text-decoration-none">About us</a></li>
-      <li class="mx-4"><a href="./html/Contact.html" class="text-white text-decoration-none">Contact us</a></li>
+      <li class="mx-4"><a href="../index.html" class="text-white text-decoration-none">Home</a></li>
+      <li class="mx-4"><a href="Catalogue.html" class="text-white text-decoration-none">Catalogue</a></li>
+      <li class="mx-4"><a href="About.html" class="text-white text-decoration-none">About us</a></li>
+      <li class="mx-4"><a href="Contact.html" class="text-white text-decoration-none">Contact us</a></li>
       <li class="mx-4"><a href="#" class="cart-link" onclick="openCart()">Cart</a></li>
 
   </div>
 </div>
-<body style="background-color: #1E1E1E;">
-<header class="d-flex justify-content-around align-items-center w-100 px-4">
+<header class="d-flex justify-content-between align-items-center w-100 px-2">
   <img src="../images/GameBitLogo.png" alt="GameBit logo" width="150" height="150">
   <nav>
       <ul class="d-flex m-0">
-          <li class="mx-4"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-          <li class="mx-4"><a href="./html/Catalogue.html" class="text-white text-decoration-none">Catalogue</a></li>
-          <li class="mx-4"><a href="./html/About.html" class="text-white text-decoration-none">About us</a></li>
-          <li class="mx-4"><a href="./html/Contact.html" class="text-white text-decoration-none">Contact us</a></li>
+          <li class="mx-4"><a href="../index.html" class="text-white text-decoration-none">Home</a></li>
+          <li class="mx-4"><a href="Catalogue.html" class="text-white text-decoration-none">Catalogue</a></li>
+          <li class="mx-4"><a href="About.html" class="text-white text-decoration-none">About us</a></li>
+          <li class="mx-4"><a href="Contact.html" class="text-white text-decoration-none">Contact us</a></li>
           <li class="mx-4">
               <a href="#" class="cart-link" onclick="openCart()">
                   <i class="fas fa-shopping-cart" style="color: #00ff11;"></i>
@@ -84,6 +119,26 @@
         </ul>
       </nav></div>
     </div>
+    <footer>
+      <div class=" d-flex flex-column align-items-center justify-content-between height py-3 ">
+      <ul class="d-flex justify-content-center gap-4 p-0 m-0">
+        <li class=""><a href="#" class="text-white text-decoration-none">Home</a></li>
+        <li class=""><a href="#" class="text-white text-decoration-none">Catalogue</a></li>
+        <li class=""><a href="#" class="text-white text-decoration-none">About us</a></li>
+        <li class=""><a href="#" class="text-white text-decoration-none">Contact us</a></li>
+      </ul>
+      <div class=" d-flex justify-content-center gap-4 ">
+          <img src="../images/Address.png" alt="">
+          <img src="../images/Instagram.png" alt="">
+          <img src="../images/WhatsApp.png" alt="">
+          <img src="../images/Letter.png" alt="">
+          <img src="../images/Phone.png" alt="">
+        </div>
+      <div class="text-center text-white ">
+        Copyright ©2023 All rights reserved
+      </div>
+    </div>
+  </footer>
       
      
 </body>
