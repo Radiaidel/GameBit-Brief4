@@ -16,6 +16,12 @@ body{
     background-color: #f9f9f9;
     overflow-x: hidden
 }
+.color8{
+    background-color: var(--black);
+}
+.color7{
+    background-color: #393939;
+}
 .btn-bg{
     background: var(--font);
 }
@@ -413,6 +419,10 @@ footer{
 .height{
     height: 200px;
 }
+.hi{
+    height: 25px !important;
+}
+
 
 @media screen and (max-width:700px){
     #small-about{
