@@ -369,3 +369,28 @@ function paginate(page) {
   currentPage = page;
   displayData(page);
 }
+
+//fonction generer random numbers :
+document.addEventListener("DOMContentLoaded", function () {
+  const orderNumber = document.getElementById("orderNumber");
+  orderNumber.textContent = generateRandomOrderNumber(8);
+});
+
+function generateRandomOrderNumber(length) {
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let randomOrderNumber = "";
+  for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      randomOrderNumber += characters.charAt(randomIndex);
+  }
+  return randomOrderNumber;
+}
+//fonction de date 
+function genererDate() {
+  const date = new Date();
+  const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+  document.getElementById("date").textContent += ` ${formattedDate}`;
+}
+
+//update date :
+window.onload = genererDate;

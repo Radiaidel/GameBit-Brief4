@@ -422,7 +422,25 @@ footer{
 .hi{
     height: 25px !important;
 }
+.modal-content {
+    background-color: #252422;
+}
 
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    color: white;
+}
+
+.modal-body {
+    color: white;
+}
+
+.order-number {
+    color: #55E95E;
+}
 
 @media screen and (max-width:700px){
     #small-about{
