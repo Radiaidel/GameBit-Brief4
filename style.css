@@ -16,10 +16,16 @@ body{
     background-color: #f9f9f9;
     overflow-x: hidden
 }
+.color8{
+    background-color: var(--black);
+}
+.color7{
+    background-color: #393939;
+}
 .btn-bg{
     background: var(--font);
 }
-.height{
+.height1{
     height: 70px;
     
 }
@@ -389,9 +395,6 @@ form {
 }
 .about-h1{
     color: #00FF10;
-    font-size: 50PX;
-    font-weight: bold;
-    margin-top: 10%!important;
 }
 .carousel-item-active{
     height: 70%!important;
@@ -416,6 +419,10 @@ footer{
 .height{
     height: 200px;
 }
+.hi{
+    height: 25px !important;
+}
+
 
 @media screen and (max-width:700px){
     #small-about{
