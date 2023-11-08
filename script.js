@@ -167,12 +167,12 @@ function searchById(array, id) {
   return null; 
 }
 //test
-const foundProduct = searchById(products, "HD001");
-if (foundProduct) {
-  console.log("Product found:", foundProduct);
-} else {
-  console.log("Product with ID", "HD001", "not found.");
-}
+// const foundProduct = searchById(products, "HD001");
+// if (foundProduct) {
+//   console.log("Product found:", foundProduct);
+// } else {
+//   console.log("Product with ID", "HD001", "not found.");
+// }
 
 
 function addToCart(element) {
@@ -389,7 +389,7 @@ function validateForm(event) {
 
  // Le formulaire est valide,  la popup 
  var modalContent = document.getElementById("modal-content");
- modalContent.innerHTML = "<span class='text'>Prénom :</span> " + firstName + "&nbsp;<span class='blue-text'>Nom de famille :</span> " + lastName + "<br><span class='text'>Email :</span> " + email + "<br><span class='text'>Téléphone :</span> " + phone + "<br><span class='text'>Message :</span> " + message;
+ modalContent.innerHTML = "<span class='text'>Prénom :</span> " + firstName + "&nbsp &nbsp &nbsp;<span class='blue-text'>Nom de famille :</span> " + lastName + "<br><span class='text'>Email :</span> " + email + "<br><span class='text'>Téléphone :</span> " + phone + "<br><span class='text'>Message :</span> " + message;
  
   // Afficher la popup
   var myModal = new bootstrap.Modal(document.getElementById('successModal'));
