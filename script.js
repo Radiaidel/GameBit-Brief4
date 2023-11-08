@@ -104,8 +104,17 @@ function createElements() {
 
     let btnOutline = document.createElement('button');
     btnOutline.type = "button";
-    btnOutline.innerHTML = "Personalize";
+    btnOutline.innerHTML = "Customizee";
     btnOutline.classList = "btn btn-cust rounded-5";
+    btnOutline.setAttribute("data-toggle", "modal");
+    btnOutline.setAttribute("data-target", "#customizationModal");
+    btnOutline.addEventListener("click", () => {
+      CustomizeFunc(elem.ID);
+    });
+
+
+
+
 
     let btn = document.createElement('button');
     btn.type = "button";
@@ -128,14 +137,6 @@ function createElements() {
 
     Cards.appendChild(card);
 
-
-  
-          card.addEventListener("click", () => {
-            let selectedItemId = elem.ID;
-            window.location.href = "Personnalisation.html?id=" + selectedItemId;
-          });
-
-    console.log("hhhh");
 });
 
 }
@@ -144,52 +145,102 @@ function createElements() {
 /************************************************************************************************* */
 /************************************************************************************************* */
 /************************************************************************************************* */
-function getProductById(productId) {
-    return new Promise((resolve, reject) => {
-      if (products.length === 0) {
-        return reject(new Error('Les données ne sont pas encore chargées.'));
+
+
+// Fonction pour personnaliser le produit
+// function CustomizeFunc(productid) {
+//   // Récupérer les éléments HTML dans la modal
+//   var modalTitle = document.querySelector('.modal-title');
+//   var modalDescription = document.querySelector('.modal-description');
+//   var modalPrice = document.querySelector('#price');
+
+
+// var product=searchById(products,productid);
+//   modalTitle.textContent = product.Name; // Remplacez "elem.name" par la propriété appropriée contenant le nom du produit
+//   modalDescription.textContent =product.Description; // Remplacez "elem.description" par la propriété appropriée contenant la description du produit
+//   modalPrice.textContent =  product.Price.toString();
+//   // Vous pouvez également mettre à jour d'autres éléments comme les images du carrousel, les caractéristiques, etc., si nécessaire.
+// }
+
+
+function CustomizeFunc(productId) {
+  var product = searchById(products, productId);
+
+  // Récupérer les éléments HTML dans la modal
+  var modalTitle = document.querySelector('.modal-title');
+  var modalDescription = document.querySelector('.modal-description');
+  var modalPrice = document.querySelector('#price');
+  var carouselInner = document.querySelector('.carousel-inner');
+
+  modalTitle.textContent = product.Name;
+  modalDescription.textContent = product.Description;
+  modalPrice.textContent = product.Price.toString();
+
+  // Effacer le contenu actuel du carrousel
+  carouselInner.innerHTML = '';
+
+  // Ajouter les images du produit au carrousel
+  product.Images.forEach(function(image, index) {
+      var carouselItem = document.createElement('div');
+      carouselItem.classList.add('carousel-item');
+
+      if (index === 0) {
+          carouselItem.classList.add('active');
       }
-  
-      const product = products.find((product) => product.ID == productId);
-  
-      if (product) {
-        resolve(product);
-      } else {
-        reject(new Error('Produit introuvable'));
-      }
-    });
-  }
-  
-  
 
-// Fonction pour afficher les données du produit
-function displayProductDetails(product) {
-    // Trouver les éléments HTML où vous voulez afficher les données
-    const productNameElement = document.getElementById("productname");
-    const productDescriptionElement = document.getElementById("descriptionproduct");
+      var img = document.createElement('img');
+      img.src = image;
+      img.classList.add('d-block', 'w-100');
+      img.alt = 'Product Image ' + (index + 1);
 
-    // Mettre à jour les éléments HTML avec les données du produit
-    productNameElement.textContent = product.Name;
-    productDescriptionElement.textContent = product.Description;
-
-    // Vous pouvez également mettre à jour d'autres éléments comme le prix, les images, etc.
+      carouselItem.appendChild(img);
+      carouselInner.appendChild(carouselItem);
+  });
 }
 
-// Attendre que le document soit chargé
-document.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const selectedItemId = urlParams.get("id");
-  
-    getProductById(selectedItemId)
-      .then((product) => {
-        displayProductDetails(product);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(document).ready(function () {
+  // Handle quantity increment/decrement
+  $('#minusBtn').click(function () {
+      var quantity = parseInt($('#quantity').text());
+      if (quantity > 1) {
+          $('#quantity').text(quantity - 1);
+      }
   });
-  
-  
+
+  $('#plusBtn').click(function () {
+      var quantity = parseInt($('#quantity').text());
+      $('#quantity').text(quantity + 1);
+  });
+
+  // Update price based on quantity
+  $('#quantity').change(function () {
+      var quantity = parseInt($(this).text());
+      var price = 9.99; // Update with your actual product price
+      $('#price').text((price * quantity).toFixed(2));
+  });
+});
+
 
 
 
