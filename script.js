@@ -195,49 +195,69 @@ function removeProductFromCart(productId) {
 function addToCart(elem) {
   let Items = document.getElementById("cart-items")
     let card = document.createElement("div");
-    card.classList = `card`;
+    card.classList = "d-flex h-auto gap-1 my-2 color8 rounded-3 py-3";
+    let ayoub = document.createElement("div");
+    ayoub.classList = "w-25 px-2 rounded-3 align-self-center";
 
     let img = document.createElement("img");
     img.src = elem.Images[0];
     img.alt = elem.Name;
+    img.classList= "w-100 h-100 color7 rounded-1"
+    
+    let najwa = document.createElement("div");
+    najwa.classList="najwa w-75"
 
-    let title = document.createElement("h4");
+    let title = document.createElement("h1");
     title.innerHTML = elem.Name;
-    title.classList= "card-title";
+    title.classList= "card-title fs-5 m-0 text-white";
 
     let description = document.createElement("p");
-    description.innerHTML = elem.Description;
-    description.classList = "card-text";
+    description.innerHTML = elem.Category;
+    description.classList = "card-text m-2 text-white";
 
-    let price = document.createElement('span');
+    let mery = document.createElement("div");
+    mery.classList="d-flex justify-content-between hi"
+
+    let ana = document.createElement('div');
+    ana.classList="d-flex gap-1"
+
+    let img1 = document.createElement("img");
+    img1.src = "../images/Reduce.png";
+    img1.alt = "icone";
+
+    let cont = document.createElement("p");
+    cont.innerHTML = "0";
+    cont.classList = "text-white";
+
+    let img2 = document.createElement("img");
+    img2.src = "../images/Sum.png";
+    img2.alt = "icone";
+
+    let nta = document.createElement('div');
+    nta.classList="d-flex"
+
+    let price = document.createElement('p');
     price.innerHTML = "$"+elem.Price;
-    price.classList = "price";
+    price.classList = "text-white";
 
-    let btns = document.createElement('div');
-    btns.classList = "price";
+    let img3 = document.createElement("img");
+    img3.src = "../images/Remove.png";
+    img3.alt = "icone";
 
-    let btnOutline = document.createElement('button');
-    btnOutline.type = "button";
-    btnOutline.innerHTML = "Personalize";
-    btnOutline.classList = "btn btn-outline-success";
+    card.appendChild(ayoub);
+    card.appendChild(najwa);
+    ayoub.appendChild(img);
+    najwa.appendChild(title);
+    najwa.appendChild(description);
+    najwa.appendChild(mery);
+    mery.appendChild(ana);
+    mery.appendChild(nta);
+    ana.appendChild(img1);
+    ana.appendChild(cont);
+    ana.appendChild(img2);
+    nta.appendChild(price);
+    nta.appendChild(img3);
 
-    let btn = document.createElement('button');
-    btn.type = "button";
-    btn.innerHTML = "Add To Cart";
-    btn.classList = "btn btn-success";
-    btn.addEventListener("click",()=>{
-      addToCart(elem);
-    })
-
-    card.appendChild(img);
-    card.appendChild(title);
-    card.appendChild(description);
-    card.appendChild(price);
-    card.appendChild(btns);
-
-
-    btns.appendChild(btnOutline);
-    btns.appendChild(btn);
 
     Items.appendChild(card);
 }
