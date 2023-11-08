@@ -4,6 +4,11 @@ let itemsPerPage = 8;
 // let currentPage = 1;
 let cards = [];
 let storedCart = [];
+<<<<<<< HEAD
+=======
+let priceT = 0;
+
+>>>>>>> 1740ae6ccb2c2d262de1255a0d5d0622952305fe
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -195,7 +200,11 @@ function updateCartDisplay() {
 
   storedCart.forEach((elem, index) => {
     const card = document.createElement("div");
+<<<<<<< HEAD
     card.classList = `item d-flex gap-1 my-2 color8 rounded-3 py-3 justify-content-around`;
+=======
+    card.classList = `item d-flex gap-1 my-2 color8 rounded-3 py-3 justify-content-between px-3`;
+>>>>>>> 1740ae6ccb2c2d262de1255a0d5d0622952305fe
 
     const imgDiv = document.createElement('div');
     imgDiv.classList = "w-25 px-2 rounded-3 color7";
@@ -206,6 +215,10 @@ function updateCartDisplay() {
     img.classList = "w-100 h-100 rounded-1";
 
     const textDiv = document.createElement('div');
+<<<<<<< HEAD
+=======
+    textDiv.classList = "w-75 ms-3";
+>>>>>>> 1740ae6ccb2c2d262de1255a0d5d0622952305fe
 
     const title = document.createElement("h1");
     title.innerHTML = elem.Name;
@@ -219,10 +232,17 @@ function updateCartDisplay() {
     miniContainer.classList = "d-flex justify-content-between hi";
 
     const counter = document.createElement('div');
+<<<<<<< HEAD
     counter.classList = "d-flex gap-1";
 
     const minus = document.createElement("button");
     minus.textContent = "-";
+=======
+    counter.classList = "d-flex gap-2 counter";
+
+    const minus = document.createElement("button");
+    minus.innerHTML = "-";
+>>>>>>> 1740ae6ccb2c2d262de1255a0d5d0622952305fe
     minus.addEventListener("click", () => {
       removeOneFromCart(index);
     });
@@ -232,12 +252,17 @@ function updateCartDisplay() {
     count.classList = "text-white";
 
     const add = document.createElement("button");
+<<<<<<< HEAD
     add.textContent = "+";
+=======
+    add.innerHTML = "+";
+>>>>>>> 1740ae6ccb2c2d262de1255a0d5d0622952305fe
     add.addEventListener("click", () => {
       addCount(index);
     });
 
     const priceContainer = document.createElement("div");
+<<<<<<< HEAD
     priceContainer.classList = "d-flex";
 
     const price = document.createElement('p');
@@ -246,10 +271,24 @@ function updateCartDisplay() {
 
     const removeButton = document.createElement('button');
     removeButton.textContent = "Remove";
+=======
+    priceContainer.classList = "d-flex align-items-baseline fs-5";
+
+    const price = document.createElement('p');
+    price.innerHTML = "$" + totalElem(elem);
+    price.classList = "text-white me-1";
+
+    const removeButton = document.createElement('button');
+    removeButton.classList= "bi bi-trash3 text-danger bg-transparent border border-0 fs-5";
+>>>>>>> 1740ae6ccb2c2d262de1255a0d5d0622952305fe
     removeButton.addEventListener("click", () => {
       removeProductFromCart(index);
     });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1740ae6ccb2c2d262de1255a0d5d0622952305fe
     card.appendChild(imgDiv);
     card.appendChild(textDiv);
     imgDiv.appendChild(img);
@@ -296,6 +335,10 @@ function removeOneFromCart(index) {
 function totalElem(elem) {
   let price = elem.Count * elem.Price;
   let priceFix = price.toFixed(2);
+<<<<<<< HEAD
+=======
+  priceT += priceFix;
+>>>>>>> 1740ae6ccb2c2d262de1255a0d5d0622952305fe
   return priceFix;
 }
 
