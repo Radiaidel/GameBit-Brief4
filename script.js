@@ -3,6 +3,7 @@ let cart = [];
 let itemsPerPage = 8;
 // let currentPage = 1;
 let cards = [];
+let storedCart = [];
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -133,15 +134,6 @@ function printPage() {
   window.print();
 }
 
-function addToCart(elem) {
-    if (cart.includes(elem)) {
-        elem.Count ++;
-    }else{
-        cart.push(elem);
-    }
-    console.log(cart);
-}
-
 function filterByCategory(elm) {
   if (elm === 'All') {
     displayData(1);
@@ -182,21 +174,26 @@ if (foundProduct) {
 
 
 function addToCart(element) {
-  
+
   if (cart.includes(element)) {
     element.Count++;
+    localStorage.setItem("cart",JSON.stringify(cart));
+
   }else{
     element.Count = 1;
     cart.push(element);
+    localStorage.setItem("cart",JSON.stringify(cart));
   }
   updateCartDisplay();
 }
 
 function updateCartDisplay() {
   const cartItemsContainer = document.getElementById("cart-items");
-  cartItemsContainer.innerHTML = ''; // Clear the existing cart items
+  cartItemsContainer.innerHTML = '';
 
-  cart.forEach((elem, index) => {
+  storedCart = JSON.parse(localStorage.getItem("cart"));
+
+  storedCart.forEach((elem, index) => {
     const card = document.createElement("div");
     card.classList = `item d-flex gap-1 my-2 color8 rounded-3 py-3 justify-content-around`;
 
@@ -273,25 +270,33 @@ function updateCartDisplay() {
 
 function removeProductFromCart(index) {
   cart.splice(index, 1);
+  localStorage.setItem("cart",JSON.stringify(cart));
   updateCartDisplay();
 }
 
 function addCount(index) {
   cart[index].Count++;
+  localStorage.setItem("cart",JSON.stringify(cart));
+
   updateCartDisplay();
 }
 
 function removeOneFromCart(index) {
   cart[index].Count--;
+  localStorage.setItem("cart",JSON.stringify(cart));
+
   if(cart[index].Count == 0){
     removeProductFromCart(index);
+    localStorage.setItem("cart",JSON.stringify(cart));
   }else{
     updateCartDisplay();
   }
 }
 
 function totalElem(elem) {
-  return elem.Count * elem.Price;
+  let price = elem.Count * elem.Price;
+  let priceFix = price.toFixed(2);
+  return priceFix;
 }
 
 // Call updateCartDisplay initially to display any items that might already be in the cart
@@ -406,40 +411,3 @@ function paginate(page) {
   currentPage = page;
   displayData(page);
 }
-
-//fonction generer random numbers :
-document.addEventListener("DOMContentLoaded", function () {
-  const orderNumber = document.getElementById("orderNumber");
-  orderNumber.textContent = generateRandomOrderNumber(8);
-});
-
-function generateRandomOrderNumber(length) {
-  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  let randomOrderNumber = "";
-  for (let i = 0; i < length; i++) {
-      const randomIndex = Math.floor(Math.random() * characters.length);
-      randomOrderNumber += characters.charAt(randomIndex);
-  }
-  return randomOrderNumber;
-}
-//fonction de date 
-function genererDate() {
-  const date = new Date();
-  const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-  document.getElementById("date").textContent += ` ${formattedDate}`;
-}
-
-//update date :
-window.onload = genererDate;
-//calcul Total hors taxes :
-
-
-//Total TVA:
-
-
-//Total toutes taxes comprises:
-
-
-
-//productList afficher les produit dans la table de devis a partir du panier :
-
