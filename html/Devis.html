@@ -49,84 +49,39 @@
         <thead>
           <tr class="height1">
             <!-- <th class="th align-middle">Nº</th> -->
-            <th class="th align-middle">Item </th>
+            <th class="th align-middle">Product </th>
             <th class="th align-middle">Description</th>
             <th class="th align-middle">Price</th>
-            <th class="th align-middle">Quantit</th>
-            <th class="th align-middle">Total HT</th>
+            <th class="th align-middle">quantity</th>
+            <th class="th align-middle">Prix HT</th>
             <th class="th align-middle">Tax 20%</th>
           </tr>
         </thead>
-        <tbody>
-          <tr class="height1 ">
-            <!-- <td class="td align-middle fw-bold">1</td> -->
-            <td class="td align-middle"><img src="../images/CONSOLE.png" class="img-fluid image" alt="Responsive image"></td>
-            <td class="td align-middle">Cataclysm gaming headsets</td>            
-            <td class="td align-middle">30.00$</td>
-            <td class="td align-middle">2</td>
-            <td class="td align-middle">60.00$</td>
-            <td class="td align-middle">12.00$</td>
-          </tr>
-          <tr class="height1" >
-            <!-- <td class="align-middle fw-bold">2</td> -->
-            <td class="align-middle"><img src="../images/casque.png" class="img-fluid image" alt="photo"></td>
-            <td class="align-middle">Cataclysm gaming headsets</td>
-            <td class="align-middle">25.00$</td>
-            <td class="align-middle">1</td>
-            <td class="align-middle">25.00$</td>
-            <td class="align-middle">5.00$</td>
-          </tr>
-          <tr class="height1">
-            <!-- <td class="td align-middle fw-bold">3</td> -->
-            <td class="td align-middle"><img src="../images/PC.png" class="img-fluid image" alt="photo"></td>
-            <td class="td align-middle">Cataclysm gaming PC</td>
-            <td class="td align-middle">999.00$</td>
-            <td class="td align-middle">1</td>
-            <td class="td align-middle">999.00$</td>
-            <td class="td align-middle">199.80$</td>
-          </tr>
-          <tr class="height1">
-            <!-- <td class="align-middle fw-bold">4</td> -->
-            <td class="align-middle"><img src="../images/souri.png" class="img-fluid souris " alt="photo"></td>
-            <td class="align-middle">Cataclysm gaming mouse</td>
-            <td class="align-middle">20.00$</td>
-            <td class="align-middle">3</td>
-            <td class="align-middle">60.00$</td>
-            <td class="align-middle">12.00$</td>
-          </tr>
-          <tr class="height1">
-            <!-- <td class="td align-middle fw-bold">5</td> -->
-            <td class="td align-middle"><img src="../images/clavier.png" class="img-fluid image " alt="photo"></td>
-            <td class="td align-middle">Cataclysm gaming keyboard</td>
-            <td class="td align-middle">15.00$</td>
-            <td class="td align-middle">2</td>
-            <td class="td align-middle">30.00$</td>
-            <td class="td align-middle">6.00$</td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-    </div>
-    <div class=" d-flex justify-content-end ">
-        <div class="col-md-3 margin mt-2">
-        <table class="table ">
-            <tbody>
-              <tr>
-                <th class="td align-middle">Subtotal  :</th>
-                <td class="td align-middle text-end" id="subTotal">1174.00$</td>
-              </tr>
-              <tr >
-                <th class="align-middle">Tax 20% :</th>
-                <td class="align-middle text-end"> 234.80$</td>
-              </tr>
-              <tr>
-                <th class="th align-middle">Total      :</th>
-                <td class="th align-middle text-end">1408.80$</td>
-              </tr>
-            </tbody>
-          </table>
+       <!--Info table --> 
+          <tbody id="productList"></tbody>
+        </table>
         </div>
     </div>
+    <div class=" d-flex justify-content-end ">
+      <div class="col-md-3 margin mt-2">
+      <table class="table ">
+          <tbody>
+            <tr>
+              <th class="td align-middle">Total hors taxes :</th>
+              <td class="td align-middle text-end" id="totalHT"></td>
+            </tr>
+            <tr >
+              <th class="align-middle">Total TVA:</th>
+              <td class="align-middle text-end" id="totalTVA"> </td>
+            </tr>
+            <tr>
+              <th class="th align-middle">Total toutes taxes comprises:</th>
+              <td class="th align-middle text-end" id="totalTTC"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
     <div class="container  d-flex justify-content-around flex-wrap mt-5" id="print-btns">
         <a href="./Catalogue.html" class="btn btn-bg btn-sm w-25 shadow p-3 mb-5  rounded fw-bold">Continue Shopping <img src="../images/Shopping Cart.png" alt="icone"></a>
         <button type="button" class="btn btn-bg btn-sm w-25 shadow p-3 mb-5  rounded fw-bold" onclick="printPage()">Print <img src="../images/Print.png" alt="icone"></button>

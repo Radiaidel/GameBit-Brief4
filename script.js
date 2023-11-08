@@ -33,9 +33,6 @@ fetchData().then((result) => {
   createElements(result);  
 });
 
-
-
-
 function categories(){
   let catArray = ["All","Mouse","Keyboard","Gaming-Console","Monitor","Headset","Video-Game","Gaming-PC","Controller"];
 
@@ -128,80 +125,9 @@ function createElements() {
 
     Cards.appendChild(card);
 
-
-  
-          card.addEventListener("click", () => {
-            let selectedItemId = elem.ID;
-            window.location.href = "Personnalisation.html?id=" + selectedItemId;
-          });
-
-    console.log("hhhh");
 });
 
 }
-/************************************************************************************************* */
-/************************************************************************************************* */
-/************************************************************************************************* */
-/************************************************************************************************* */
-/************************************************************************************************* */
-function getProductById(productId) {
-    return new Promise((resolve, reject) => {
-      if (products.length === 0) {
-        return reject(new Error('Les données ne sont pas encore chargées.'));
-      }
-  
-      const product = products.find((product) => product.ID == productId);
-  
-      if (product) {
-        resolve(product);
-      } else {
-        reject(new Error('Produit introuvable'));
-      }
-    });
-  }
-  
-  
-
-// Fonction pour afficher les données du produit
-function displayProductDetails(product) {
-    // Trouver les éléments HTML où vous voulez afficher les données
-    const productNameElement = document.getElementById("productname");
-    const productDescriptionElement = document.getElementById("descriptionproduct");
-
-    // Mettre à jour les éléments HTML avec les données du produit
-    productNameElement.textContent = product.Name;
-    productDescriptionElement.textContent = product.Description;
-
-    // Vous pouvez également mettre à jour d'autres éléments comme le prix, les images, etc.
-}
-
-// Attendre que le document soit chargé
-document.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const selectedItemId = urlParams.get("id");
-  
-    getProductById(selectedItemId)
-      .then((product) => {
-        displayProductDetails(product);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  });
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
 
 function printPage() {
   window.print();
@@ -254,77 +180,123 @@ if (foundProduct) {
   console.log("Product with ID", "HD001", "not found.");
 }
 
-function removeProductFromCart(productId) {
-  const productIndex = cart.findIndex((product) => product.ID === productId);
-  if (productIndex !== -1) {
-    cart.splice(productIndex, 1);
-    console.log(`Produit avec l'ID ${productId} supprimé du panier.`);
-  } else {
-    console.log(`Produit avec l'ID ${productId} non trouvé dans le panier.`);
+
+function addToCart(element) {
+  
+  if (cart.includes(element)) {
+    element.Count++;
+  }else{
+    element.Count = 1;
+    cart.push(element);
   }
+  updateCartDisplay();
 }
 
+function updateCartDisplay() {
+  const cartItemsContainer = document.getElementById("cart-items");
+  cartItemsContainer.innerHTML = ''; // Clear the existing cart items
 
-function addToCart(elem) {
-  let Items = document.getElementById("cart-items")
-    let card = document.createElement("div");
-    card.classList = `card`;
+  cart.forEach((elem, index) => {
+    const card = document.createElement("div");
+    card.classList = `item d-flex gap-1 my-2 color8 rounded-3 py-3 justify-content-around`;
 
-    let img = document.createElement("img");
+    const imgDiv = document.createElement('div');
+    imgDiv.classList = "w-25 px-2 rounded-3 color7";
+
+    const img = document.createElement("img");
     img.src = elem.Images[0];
     img.alt = elem.Name;
+    img.classList = "w-100 h-100 rounded-1";
 
-    let title = document.createElement("h4");
+    const textDiv = document.createElement('div');
+
+    const title = document.createElement("h1");
     title.innerHTML = elem.Name;
-    title.classList= "card-title";
+    title.classList = "fs-5 m-0 text-white";
 
-    let description = document.createElement("p");
-    description.innerHTML = elem.Description;
-    description.classList = "card-text";
+    const description = document.createElement("p");
+    description.innerHTML = elem.Category;
+    description.classList = "text-white my-2";
 
-    let price = document.createElement('span');
-    price.innerHTML = "$"+elem.Price;
-    price.classList = "price";
+    const miniContainer = document.createElement('div');
+    miniContainer.classList = "d-flex justify-content-between hi";
 
-    let btns = document.createElement('div');
-    btns.classList = "price";
+    const counter = document.createElement('div');
+    counter.classList = "d-flex gap-1";
 
-    let btnOutline = document.createElement('button');
-    btnOutline.type = "button";
-    btnOutline.innerHTML = "Personalize";
-    btnOutline.classList = "btn btn-outline-success";
+    const minus = document.createElement("button");
+    minus.textContent = "-";
+    minus.addEventListener("click", () => {
+      removeOneFromCart(index);
+    });
 
-    let btn = document.createElement('button');
-    btn.type = "button";
-    btn.innerHTML = "Add To Cart";
-    btn.classList = "btn btn-success";
-    btn.addEventListener("click",()=>{
-      addToCart(elem);
-    })
+    const count = document.createElement('p');
+    count.innerHTML = elem.Count;
+    count.classList = "text-white";
 
-    card.appendChild(img);
-    card.appendChild(title);
-    card.appendChild(description);
-    card.appendChild(price);
-    card.appendChild(btns);
+    const add = document.createElement("button");
+    add.textContent = "+";
+    add.addEventListener("click", () => {
+      addCount(index);
+    });
 
+    const priceContainer = document.createElement("div");
+    priceContainer.classList = "d-flex";
 
-    btns.appendChild(btnOutline);
-    btns.appendChild(btn);
+    const price = document.createElement('p');
+    price.innerHTML = "$" + totalElem(elem);
+    price.classList = "text-white";
 
-    Items.appendChild(card);
+    const removeButton = document.createElement('button');
+    removeButton.textContent = "Remove";
+    removeButton.addEventListener("click", () => {
+      removeProductFromCart(index);
+    });
+
+    card.appendChild(imgDiv);
+    card.appendChild(textDiv);
+    imgDiv.appendChild(img);
+    textDiv.appendChild(title);
+    textDiv.appendChild(description);
+    textDiv.appendChild(miniContainer);
+    miniContainer.appendChild(counter);
+    counter.appendChild(minus);
+    counter.appendChild(count);
+    counter.appendChild(add);
+    miniContainer.appendChild(priceContainer);
+    priceContainer.appendChild(price);
+    priceContainer.appendChild(removeButton);
+
+    cartItemsContainer.appendChild(card);
+  });
 }
-// Fonction pour calculer le total du panier :
-function calculateTotal() {
-  let total = 0;
-  for (const elem of cart) {
-      total += elem.Price * elem.quantity;
+
+function removeProductFromCart(index) {
+  cart.splice(index, 1);
+  updateCartDisplay();
+}
+
+function addCount(index) {
+  cart[index].Count++;
+  updateCartDisplay();
+}
+
+function removeOneFromCart(index) {
+  cart[index].Count--;
+  if(cart[index].Count == 0){
+    removeProductFromCart(index);
+  }else{
+    updateCartDisplay();
   }
-  return total;
 }
-//fonction pour :
 
-//Formulaire :
+function totalElem(elem) {
+  return elem.Count * elem.Price;
+}
+
+// Call updateCartDisplay initially to display any items that might already be in the cart
+updateCartDisplay();
+
 function resetForm() {
   var form = document.getElementById("contactForm");
   form.reset();
@@ -426,14 +398,6 @@ function openCart() {
   }
 }
 
-function calculateTotal() {
-  let total = 0;
-  for (const elem of cart) {
-      total += elem.Price * elem.quantity;
-  }
-  return total;
-}
-
 window.addEventListener("load",()=>{
   displayData(1);
 })
@@ -442,6 +406,7 @@ function paginate(page) {
   currentPage = page;
   displayData(page);
 }
+
 
 //fonction generer random numbers :
 document.addEventListener("DOMContentLoaded", function () {
@@ -467,3 +432,15 @@ function genererDate() {
 
 //update date :
 window.onload = genererDate;
+//calcul Total hors taxes :
+
+
+//Total TVA:
+
+
+//Total toutes taxes comprises:
+
+
+
+//productList afficher les produit dans la table de devis a partir du panier :
+
