@@ -359,6 +359,16 @@ form {
     align-items: center;
     justify-content: space-between;
 }
+.counter button{
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background-color: #00FF10;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+}
 #c-btns a{
     width: 48%;
     border: #00FF10 2px solid;

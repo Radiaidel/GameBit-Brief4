@@ -3,6 +3,9 @@ let cart = [];
 let itemsPerPage = 8;
 // let currentPage = 1;
 let cards = [];
+let storedCart = [];
+let priceT = 0;
+
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -133,15 +136,6 @@ function printPage() {
   window.print();
 }
 
-function addToCart(elem) {
-    if (cart.includes(elem)) {
-        elem.Count ++;
-    }else{
-        cart.push(elem);
-    }
-    console.log(cart);
-}
-
 function filterByCategory(elm) {
   if (elm === 'All') {
     displayData(1);
@@ -182,23 +176,28 @@ if (foundProduct) {
 
 
 function addToCart(element) {
-  
+
   if (cart.includes(element)) {
     element.Count++;
+    localStorage.setItem("cart",JSON.stringify(cart));
+
   }else{
     element.Count = 1;
     cart.push(element);
+    localStorage.setItem("cart",JSON.stringify(cart));
   }
   updateCartDisplay();
 }
 
 function updateCartDisplay() {
   const cartItemsContainer = document.getElementById("cart-items");
-  cartItemsContainer.innerHTML = ''; // Clear the existing cart items
+  cartItemsContainer.innerHTML = '';
 
-  cart.forEach((elem, index) => {
+  storedCart = JSON.parse(localStorage.getItem("cart"));
+
+  storedCart.forEach((elem, index) => {
     const card = document.createElement("div");
-    card.classList = `item d-flex gap-1 my-2 color8 rounded-3 py-3 justify-content-around`;
+    card.classList = `item d-flex gap-1 my-2 color8 rounded-3 py-3 justify-content-between px-3`;
 
     const imgDiv = document.createElement('div');
     imgDiv.classList = "w-25 px-2 rounded-3 color7";
@@ -209,6 +208,7 @@ function updateCartDisplay() {
     img.classList = "w-100 h-100 rounded-1";
 
     const textDiv = document.createElement('div');
+    textDiv.classList = "w-75 ms-3";
 
     const title = document.createElement("h1");
     title.innerHTML = elem.Name;
@@ -222,10 +222,10 @@ function updateCartDisplay() {
     miniContainer.classList = "d-flex justify-content-between hi";
 
     const counter = document.createElement('div');
-    counter.classList = "d-flex gap-1";
+    counter.classList = "d-flex gap-2 counter";
 
     const minus = document.createElement("button");
-    minus.textContent = "-";
+    minus.innerHTML = "-";
     minus.addEventListener("click", () => {
       removeOneFromCart(index);
     });
@@ -235,23 +235,24 @@ function updateCartDisplay() {
     count.classList = "text-white";
 
     const add = document.createElement("button");
-    add.textContent = "+";
+    add.innerHTML = "+";
     add.addEventListener("click", () => {
       addCount(index);
     });
 
     const priceContainer = document.createElement("div");
-    priceContainer.classList = "d-flex";
+    priceContainer.classList = "d-flex align-items-baseline fs-5";
 
     const price = document.createElement('p');
     price.innerHTML = "$" + totalElem(elem);
-    price.classList = "text-white";
+    price.classList = "text-white me-1";
 
     const removeButton = document.createElement('button');
-    removeButton.textContent = "Remove";
+    removeButton.classList= "bi bi-trash3 text-danger bg-transparent border border-0 fs-5";
     removeButton.addEventListener("click", () => {
       removeProductFromCart(index);
     });
+
 
     card.appendChild(imgDiv);
     card.appendChild(textDiv);
@@ -273,25 +274,34 @@ function updateCartDisplay() {
 
 function removeProductFromCart(index) {
   cart.splice(index, 1);
+  localStorage.setItem("cart",JSON.stringify(cart));
   updateCartDisplay();
 }
 
 function addCount(index) {
   cart[index].Count++;
+  localStorage.setItem("cart",JSON.stringify(cart));
+
   updateCartDisplay();
 }
 
 function removeOneFromCart(index) {
   cart[index].Count--;
+  localStorage.setItem("cart",JSON.stringify(cart));
+
   if(cart[index].Count == 0){
     removeProductFromCart(index);
+    localStorage.setItem("cart",JSON.stringify(cart));
   }else{
     updateCartDisplay();
   }
 }
 
 function totalElem(elem) {
-  return elem.Count * elem.Price;
+  let price = elem.Count * elem.Price;
+  let priceFix = price.toFixed(2);
+  priceT += priceFix;
+  return priceFix;
 }
 
 // Call updateCartDisplay initially to display any items that might already be in the cart
