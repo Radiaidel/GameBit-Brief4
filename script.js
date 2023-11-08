@@ -180,7 +180,6 @@ if (foundProduct) {
   console.log("Product with ID", "HD001", "not found.");
 }
 
-<<<<<<< HEAD
 
 function addToCart(element) {
   
@@ -293,65 +292,6 @@ function removeOneFromCart(index) {
 
 function totalElem(elem) {
   return elem.Count * elem.Price;
-=======
-function removeProductFromCart(productId) {
-  console.log(cart);
-
-  let copy = cart.filter((elem)=> elem.ID != productId);
-  cart = [...copy];
-  // const productIndex = cart.findIndex((product) => product.ID === productId);
-  // if (productIndex !== -1) {
-  //   cart.splice(productIndex, 1);
-  //   console.log(`Produit avec l'ID ${productId} supprimé du panier.`);
-  // } else {
-  //   console.log(`Produit avec l'ID ${productId} non trouvé dans le panier.`);
-  // }
-  console.log(cart);
-}
-
-
-function addToCart(elem) {
-  let Items = document.getElementById("cart-items")
-    let card = document.createElement("div");
-    card.classList = `card d-flex bg-dark w-75`;
-
-    let img = document.createElement("img");
-    img.src = elem.Images[0];
-    img.alt = elem.Name;
-
-    let title = document.createElement("h4");
-    title.innerHTML = elem.Name;
-    title.classList= "card-title";
-
-    let description = document.createElement("p");
-    description.innerHTML = elem.Description;
-    description.classList = "card-text";
-
-    let price = document.createElement('span');
-    price.innerHTML = "$"+elem.Price;
-    price.classList = "price";
-
-    let btns = document.createElement('div');
-    btns.classList = "price";
-
-    let btn = document.createElement('button');
-    btn.type = "button";
-    btn.innerHTML = "Remove";
-    btn.classList = "btn btn-danger";
-    btn.addEventListener("click",()=>{
-      removeProductFromCart(elem.ID);
-    })
-
-    card.appendChild(img);
-    card.appendChild(title);
-    card.appendChild(description);
-    card.appendChild(price);
-    card.appendChild(btns);
-
-    btns.appendChild(btn);
-
-    Items.appendChild(card);
->>>>>>> 2cd2af2ebc877029653a93de66739f3b12dd1035
 }
 
 // Call updateCartDisplay initially to display any items that might already be in the cart
@@ -466,7 +406,6 @@ function paginate(page) {
   currentPage = page;
   displayData(page);
 }
-
 
 //fonction generer random numbers :
 document.addEventListener("DOMContentLoaded", function () {
