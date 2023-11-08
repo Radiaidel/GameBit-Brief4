@@ -180,64 +180,122 @@ if (foundProduct) {
   console.log("Product with ID", "HD001", "not found.");
 }
 
-function removeProductFromCart(productId) {
-  console.log(cart);
 
-  let copy = cart.filter((elem)=> elem.ID != productId);
-  cart = [...copy];
-  // const productIndex = cart.findIndex((product) => product.ID === productId);
-  // if (productIndex !== -1) {
-  //   cart.splice(productIndex, 1);
-  //   console.log(`Produit avec l'ID ${productId} supprimé du panier.`);
-  // } else {
-  //   console.log(`Produit avec l'ID ${productId} non trouvé dans le panier.`);
-  // }
-  console.log(cart);
+function addToCart(element) {
+  
+  if (cart.includes(element)) {
+    element.Count++;
+  }else{
+    element.Count = 1;
+    cart.push(element);
+  }
+  updateCartDisplay();
 }
 
+function updateCartDisplay() {
+  const cartItemsContainer = document.getElementById("cart-items");
+  cartItemsContainer.innerHTML = ''; // Clear the existing cart items
 
-function addToCart(elem) {
-  let Items = document.getElementById("cart-items")
-    let card = document.createElement("div");
-    card.classList = `card d-flex bg-dark w-75`;
+  cart.forEach((elem, index) => {
+    const card = document.createElement("div");
+    card.classList = `item d-flex gap-1 my-2 color8 rounded-3 py-3 justify-content-around`;
 
-    let img = document.createElement("img");
+    const imgDiv = document.createElement('div');
+    imgDiv.classList = "w-25 px-2 rounded-3 color7";
+
+    const img = document.createElement("img");
     img.src = elem.Images[0];
     img.alt = elem.Name;
+    img.classList = "w-100 h-100 rounded-1";
 
-    let title = document.createElement("h4");
+    const textDiv = document.createElement('div');
+
+    const title = document.createElement("h1");
     title.innerHTML = elem.Name;
-    title.classList= "card-title";
+    title.classList = "fs-5 m-0 text-white";
 
-    let description = document.createElement("p");
-    description.innerHTML = elem.Description;
-    description.classList = "card-text";
+    const description = document.createElement("p");
+    description.innerHTML = elem.Category;
+    description.classList = "text-white my-2";
 
-    let price = document.createElement('span');
-    price.innerHTML = "$"+elem.Price;
-    price.classList = "price";
+    const miniContainer = document.createElement('div');
+    miniContainer.classList = "d-flex justify-content-between hi";
 
-    let btns = document.createElement('div');
-    btns.classList = "price";
+    const counter = document.createElement('div');
+    counter.classList = "d-flex gap-1";
 
-    let btn = document.createElement('button');
-    btn.type = "button";
-    btn.innerHTML = "Remove";
-    btn.classList = "btn btn-danger";
-    btn.addEventListener("click",()=>{
-      removeProductFromCart(elem.ID);
-    })
+    const minus = document.createElement("button");
+    minus.textContent = "-";
+    minus.addEventListener("click", () => {
+      removeOneFromCart(index);
+    });
 
-    card.appendChild(img);
-    card.appendChild(title);
-    card.appendChild(description);
-    card.appendChild(price);
-    card.appendChild(btns);
+    const count = document.createElement('p');
+    count.innerHTML = elem.Count;
+    count.classList = "text-white";
 
-    btns.appendChild(btn);
+    const add = document.createElement("button");
+    add.textContent = "+";
+    add.addEventListener("click", () => {
+      addCount(index);
+    });
 
-    Items.appendChild(card);
+    const priceContainer = document.createElement("div");
+    priceContainer.classList = "d-flex";
+
+    const price = document.createElement('p');
+    price.innerHTML = "$" + totalElem(elem);
+    price.classList = "text-white";
+
+    const removeButton = document.createElement('button');
+    removeButton.textContent = "Remove";
+    removeButton.addEventListener("click", () => {
+      removeProductFromCart(index);
+    });
+
+    card.appendChild(imgDiv);
+    card.appendChild(textDiv);
+    imgDiv.appendChild(img);
+    textDiv.appendChild(title);
+    textDiv.appendChild(description);
+    textDiv.appendChild(miniContainer);
+    miniContainer.appendChild(counter);
+    counter.appendChild(minus);
+    counter.appendChild(count);
+    counter.appendChild(add);
+    miniContainer.appendChild(priceContainer);
+    priceContainer.appendChild(price);
+    priceContainer.appendChild(removeButton);
+
+    cartItemsContainer.appendChild(card);
+  });
 }
+
+function removeProductFromCart(index) {
+  cart.splice(index, 1);
+  updateCartDisplay();
+}
+
+function addCount(index) {
+  cart[index].Count++;
+  updateCartDisplay();
+}
+
+function removeOneFromCart(index) {
+  cart[index].Count--;
+  if(cart[index].Count == 0){
+    removeProductFromCart(index);
+  }else{
+    updateCartDisplay();
+  }
+}
+
+function totalElem(elem) {
+  return elem.Count * elem.Price;
+}
+
+// Call updateCartDisplay initially to display any items that might already be in the cart
+updateCartDisplay();
 
 function resetForm() {
   var form = document.getElementById("contactForm");
@@ -338,14 +396,6 @@ function openCart() {
   if (document.getElementById("mySidenav").style.width = "250px") {
     closeNav();
   }
-}
-
-function calculateTotal() {
-  let total = 0;
-  for (const elem of cart) {
-      total += elem.Price * elem.quantity;
-  }
-  return total;
 }
 
 window.addEventListener("load",()=>{

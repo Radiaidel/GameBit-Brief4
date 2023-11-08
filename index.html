@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="../images/icon.png" type="image/x-icon">
-    <script src="/script.js" defer></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/icon.png" type="image/x-icon">
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.jshttps"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <style>
 
@@ -32,17 +32,17 @@
 
     </style>
 </head>
-
-    <div id="cart" class="z-2 h-100 flex-column ">
-        <div class="close">
-            <button type="button" onclick="closeCart()">&times;</button>
-        </div>
-        <div id="cart-items"></div>
-        <div id="c-btns">
-            <a href="./html/Devis.html" class="fs-5">Devis</a>
-            <a href="#" class="text-dark fs-5">Order</a>
-        </div>
+<div id="cart" class="z-2 h-100 flex-column px-3">
+    <div class="close">
+        <button type="button" onclick="closeCart()">&times;</button>
     </div>
+    <div id="cart-items"> 
+    </div>
+    <div id="c-btns">
+        <a href="Devis.html" class="fs-5">Devis</a>
+        <a href="#" class="text-dark fs-5">Order</a>
+    </div>
+  </div>
     <div id="mySidenav" class="sidenav">
         <button type="button" class="close" onclick="closeNav()">&times;</button>
         <div class="container">
@@ -55,7 +55,7 @@
         </div>
     </div>
 <body style="background-color: #1E1E1E;">
-    <header class="d-flex justify-content-around align-items-center w-100 px-4">
+    <header class="d-flex justify-content-between align-items-center w-100 px-2">
         <img src="images/GameBitLogo.png" alt="GameBit logo" width="150" height="150">
         <nav>
             <ul class="d-flex m-0">
@@ -127,16 +127,16 @@
             <div class="carousel-inner ">
                 <div class="carousel-item active">
                     <div class="d-flex justify-content-evenly"> 
-                        <img src="../images/Logitec.png" class="d-block img-fluid" alt="Logitech">
-                        <img src="../images/epic.png" class="d-block img-fluid" alt="Epic">
-                        <img src="../images/nvidia.png" class="d-block img-fluid" alt="Nvidia">
+                        <img src="./images/Logitec.png" class="d-block img-fluid" alt="Logitech">
+                        <img src="./images/epic.png" class="d-block img-fluid" alt="Epic">
+                        <img src="./images/nvidia.png" class="d-block img-fluid" alt="Nvidia">
                     </div>
                 </div>
                 <div class="carousel-item col-12 col-sm-12">
                     <div class="d-flex justify-content-evenly">
-                        <img src="../images/obisoft.png" class="d-block img-fluid " alt="Ubisoft" >
-                        <img src="../images/msi.png" class="d-block img-fluid " alt="MSI">
-                        <img src="../images/Play_station-removebg-preview.png" class="d-block img-fluid " alt="PlayStation" >
+                        <img src="./images/obisoft.png" class="d-block img-fluid " alt="Ubisoft" >
+                        <img src="./images/msi.png" class="d-block img-fluid " alt="MSI">
+                        <img src="./images/Play_station-removebg-preview.png" class="d-block img-fluid " alt="PlayStation" >
                     </div>
                 </div>
             </div>
@@ -185,7 +185,7 @@
             <div class="d-flex flex-wrap justify-content-center gap-3">
                 <div class="widthc d-flex flex-column justify-content-center bgc mt-4 mb-4 rounded-4 card py-4"
                     style="width: 100%; height: fit-content;  max-width: 20rem;">
-                    <img src="../images/GameBitLogo.png" class="align-self-center w-75" alt="image">
+                    <img src="./images/GameBitLogo.png" class="align-self-center w-75" alt="image">
                     <h5 class="text-center text-white card-title mb-3 fs-4">Cataclysm gaming mouse</h5>
                     <p class="text-center text-white card-text">Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry</p>
@@ -205,7 +205,7 @@
                 </div>
                 <div class="widthc d-flex flex-column justify-content-center bgc mt-4 mb-4 rounded-4 card py-4"
                 style="width: 100%; height: fit-content;  max-width: 20rem;">
-                <img src="../images/GameBitLogo.png" class="align-self-center w-75" alt="image">
+                <img src="./images/GameBitLogo.png" class="align-self-center w-75" alt="image">
                 <h5 class="text-center text-white card-title mb-3 fs-4">Cataclysm gaming mouse</h5>
                 <p class="text-center text-white card-text">Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry</p>
@@ -226,7 +226,7 @@
 
             <div class="widthc d-flex flex-column justify-content-center bgc mt-4 mb-4 rounded-4 card py-4"
             style="width: 100%; height: fit-content;  max-width: 20rem;">
-            <img src="../images/GameBitLogo.png" class="align-self-center w-75" alt="image">
+            <img src="./images/GameBitLogo.png" class="align-self-center w-75" alt="image">
             <h5 class="text-center text-white card-title mb-3 fs-4">Cataclysm gaming mouse</h5>
             <p class="text-center text-white card-text">Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry</p>
@@ -312,7 +312,7 @@
                 </div>
             </div>
             <div class="col-md-4 w-75  my-2">
-                <div class="card border-0 custom-card">
+                <div class="card border-0 custom-card d-block">
                     <div class="card-body">
                         <i class="fas fa-envelope fa-3x text-primary mb-3"></i>
                         <h5 class="card-title">Email</h5>
@@ -349,6 +349,27 @@
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+        <footer>
+            <div class=" d-flex flex-column align-items-center justify-content-between height py-3">
+            <ul class="d-flex justify-content-center gap-4 p-0 m-0">
+              <li class=""><a href="#" class="text-white text-decoration-none">Home</a></li>
+              <li class=""><a href="#" class="text-white text-decoration-none">Catalogue</a></li>
+              <li class=""><a href="#" class="text-white text-decoration-none">About us</a></li>
+              <li class=""><a href="#" class="text-white text-decoration-none">Contact us</a></li>
+            </ul>
+            <div class=" d-flex justify-content-center gap-4 ">
+                <img src="images/Address.png" alt="">
+                <img src="images/Instagram.png" alt="">
+                <img src="images/WhatsApp.png" alt="">
+                <img src="images/Letter.png" alt="">
+                <img src="images/Phone.png" alt="">
+              </div>
+            <div class="text-center text-white ">
+              Copyright ©2023 All rights reserved
+            </div>
+          </div>
+        </footer>
+    
     </section>
 
 
