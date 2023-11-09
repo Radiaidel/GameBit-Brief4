@@ -14,3 +14,5 @@ personnalisation:une page qui visualisé les détail du produit sélectioné et 
 Le panier:Le panier affichera le total des produits ajoutés par l'utilisateur, avec la possibilité d'augmenter ou de réduire la quantité. et le montant total à payer, Il comprendra aussi deux boutons : un pour valider la commande et un autre pour demander un devis.
 
 [Lien figma](https://www.figma.com/file/BOgw61J1WcIpQhVZgGFS1M/GameBit?type=design&node-id=0%3A1&mode=design&t=0APT9i3agewyI9Ht-1)
+
+[Lien de github pages](https://radiaidel.github.io/GameBit-Brief4/)
