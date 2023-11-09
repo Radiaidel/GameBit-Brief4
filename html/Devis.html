@@ -10,13 +10,274 @@
 
     <title>GameBit</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../images/icon.png" type="image/x-icon">
+    <script src="../script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body >
+  <div class="bg-image d-flex justify-content-between px-4">
+    <div class="d-flex flex-column">
+        <img src="../images/GameBitLogo.png" class="w-50" alt="logo">
+        <div class="mt-5">
+            <h1 class="fs-4">GameBit</h1>
+            <p class="w-auto">123 Main Street,<br>Safi Morroco 64000<br>+1 (555) 123-4567<br>contact@gamebit.com</p>
+        </div>
+    </div>
+    <div class="d-flex flex-column">
+        <div class="mt-5 text-end">
+            <p class="fw-bold">Devis nº</p>
+            <p class="fs-sm-3 fs-lg-5 line color fw-bold">2022-06-0006</p>
+        </div>
+        <div class="mt-5 date text-end">
+            <p class="fs-md-4">
+                <span class="fw-bold">Date de devis :</span>
+                <span id="date"></span>
+            </p>
+            <p>
+                <span class="fw-bold">Lieu de devis :</span> Safi-Morroco
+            </p>
+        </div>
+    </div>
+</div>
+
+    
+    <div class=" d-flex justify-content-center ">
+    <div class="col-md-10 px-2 ">
+      <table class="table">
+        <thead>
+           <tr class="height1">
+             <!-- <th class="th align-middle">Nº</th> -->
+             <th class="th align-middle">N°</th>
+             <th class="th align-middle">Product</th>
+             <th class="th align-middle">Description</th>
+             <th class="th align-middle">Price</th>
+             <th class="th align-middle">quantity</th>
+             <th class="th align-middle">Prix HT</th>
+             <th class="th align-middle">TVA (20%)</th>
+           </tr>
+        </thead>
+        <tbody id="productList"></tbody>
+       </table>
+        </div>
+    </div>
+    <div class=" d-flex justify-content-end ">
+      <div class="col-md-3 margin mt-2">
+      <table class="table ">
+          <tbody>
+            <tr>
+              <th class="td align-middle">Total hors taxes :</th>
+              <td class="td align-middle text-end" id="totalHT"></td>
+            </tr>
+            <tr >
+              <th class="align-middle">Total TVA:</th>
+              <td class="align-middle text-end" id="totalTVA"> </td>
+            </tr>
+            <tr>
+              <th class="th align-middle">Total toutes taxes comprises:</th>
+              <td class="th align-middle text-end" id="totalTTC"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+  <div class="container d-flex justify-content-around flex-wrap mt-5" id="print-btns">
+    <a href="./Catalogue.html" class="btn btn-bg btn-sm w-25 shadow p-3 mb-5 rounded fw-bold">Continue Shopping <img src="../images/Shopping Cart.png" alt="icone"></a>
+
+    <!-- Ajoutez de la marge à chaque bouton -->
+    <button type="button" class="btn btn-bg btn-sm w-25 shadow p-3 mb-5 rounded fw-bold mx-2" onclick="printPage()">Print <img src="../images/Print.png" alt="icone"></button>
+
+    <button type="button" class="btn btn-bg btn-sm w-25 shadow p-3 mb-5 rounded fw-bold mx-2" id="generateDevisButton">Generate Devis</button>
+
+    <button type="button" class="btn btn-bg btn-sm w-25 shadow p-3 mb-5 rounded fw-bold mx-2" data-bs-toggle="modal" data-bs-target="#successModal">
+        Checkout <img src="../images/check.png" alt="icone">
+    </button>
+</div>
+
+
+
+     <!-- Modal for Checkout -->
+     <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="successModalLabel">THANK YOU FOR SHOPPING !</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <!-- Content of the modal -->
+                  <p>Order Number : <span id="orderNumber" class="order-number"></span></p>
+                  <h4>Order Details:</h4>
+                
+                  <table class="table table-bordered table-dark">
+                      <thead>
+                          <tr>
+                              <th scope="col">Product</th>
+                              <th scope="col">Description</th>
+                              <th scope="col">Quantity</th>
+                              <th scope="col">Total</th>
+                          </tr>
+                      </thead>
+                      <tbody id="productListModal">
+                      </tbody>
+                  </table>
+                  <!-- Place order details here -->
+                  <p>We will send confirmation of the order and information about its progress by e-mail.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Pay Now</button>
+            </div>
+          </div>
+      </div>
+  </div>
+
+    <div class="footer"></div>
+   
+    <script>
+      
+//fonction generer random numbers :
+document.addEventListener("DOMContentLoaded", function () {
+  const orderNumber = document.getElementById("orderNumber");
+  orderNumber.textContent = generateRandomOrderNumber(8);
+});
+
+function generateRandomOrderNumber(length) {
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let randomOrderNumber = "";
+  for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      randomOrderNumber += characters.charAt(randomIndex);
+  }
+  return randomOrderNumber;
+}
+//fonction de date 
+function genererDate() {
+  const date = new Date();
+  const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+  document.getElementById("date").textContent += ` ${formattedDate}`;
+}
+// Fonction pour afficher les éléments du panier dans la page de devis
+function displayCartInDevis() {
+  const tbody = document.getElementById("productList");
+
+  // Effacez le contenu existant de la table
+  tbody.innerHTML = '';
+  storedCart = JSON.parse(localStorage.getItem("cart"));
+    let productNumber = 1; // Initialisez le numéro du produit à 1
+
+  storedCart.forEach((item) => {
+    const row = tbody.insertRow();
+
+    // Créez une cellule de tableau pour le numéro du produit
+    const numberCell = row.insertCell(0);
+    numberCell.textContent = productNumber;
+
+    // Incrémentez le numéro du produit pour le prochain
+    productNumber++;
+    // Créez une cellule de tableau pour l'image du produit
+    const imageCell = row.insertCell(1);
+    const productImage = document.createElement("img");
+    productImage.src = item.Images[0]; // Remplacez 'ImageURL' par la clé correcte dans votre objet 'item' contenant l'URL de l'image.
+    productImage.alt = item.Name;
+    productImage.classList.add("product-image"); // Ajoutez la classe CSS ici
+    imageCell.appendChild(productImage);
+
+    const descriptionCell = row.insertCell(2);
+    descriptionCell.textContent = item.Description;
+
+    const priceCell = row.insertCell(3);
+    priceCell.textContent = "$" + item.Price.toFixed(2);
+
+    const quantityCell = row.insertCell(4);
+    quantityCell.textContent = item.Count;
+
+    // Calcul du total hors taxes
+    const totalHT = item.Price * item.Count;
+    const totalHTCell = row.insertCell(5);
+    totalHTCell.textContent = "$" + totalHT.toFixed(2);
+
+    // Calcul de la TVA (20%)
+    const tax20Percent = totalHT * 0.20;
+    const tax20PercentCell = row.insertCell(6);
+    tax20PercentCell.textContent = "$" + tax20Percent.toFixed(2);
+  });
+  // Une fois les produits affichés, stockez-les dans localStorage
+  localStorage.setItem("devisProducts", JSON.stringify(storedCart));
+}
+
+
+
+document.getElementById("generateDevisButton").addEventListener("click", function() {
+  displayCartInDevis();
+});
+
+function calculateTotals() {
+  const storedCart = JSON.parse(localStorage.getItem("cart"));
+  let totalHT = 0; // Total hors taxes
+  let tax20Percent = 0; // TVA à 20%
+
+  // Calcul du total hors taxes et de la TVA
+  storedCart.forEach((item) => {
+    const itemTotal = item.Price * item.Count;
+    totalHT += itemTotal;
+    tax20Percent += itemTotal * 0.20;
+  });
+
+  const totalTTC = totalHT + tax20Percent; // Total toutes taxes comprises
+
+  // Mettre à jour les éléments HTML avec les totaux calculés
+  document.getElementById("totalHT").textContent = "$" + totalHT.toFixed(2);
+  document.getElementById("totalTVA").textContent = "$" + tax20Percent.toFixed(2);
+  document.getElementById("totalTTC").textContent = "$" + totalTTC.toFixed(2);
+}
+
+function init() {
+  genererDate();
+  calculateTotals();
+}
+function displayCartInDevisModal() {
+  const tbody = document.getElementById("productListModal");
+
+  // Effacez le contenu existant de la table
+  tbody.innerHTML = '';
+  storedCart = JSON.parse(localStorage.getItem("cart"));
+  let productNumber = 1;
+
+  storedCart.forEach((item) => {
+    const row = tbody.insertRow();
+
+    // Créez des cellules de tableau pour chaque détail du produit
+    const imageCell = row.insertCell(0);
+    const productImage = document.createElement("img");
+    productImage.src = item.Images[0]; // Remplacez 'ImageURL' par la clé correcte dans votre objet 'item' contenant l'URL de l'image.
+    productImage.alt = item.Name;
+    productImage.classList.add("product-image"); // Ajoutez la classe CSS ici
+    imageCell.appendChild(productImage);
+
+    const descriptionCell = row.insertCell(1);
+    descriptionCell.textContent = item.Description;
+
+    const quantityCell = row.insertCell(2);
+    quantityCell.textContent = item.Count;
+
+    // Calcul du total pour chaque produit
+    const total = item.Price * item.Count;
+    const totalCell = row.insertCell(3);
+    totalCell.textContent = "$" + total.toFixed(2);
+  });
+}
+
+document.getElementById("generateDevisButton").addEventListener("click", function() {
+  displayCartInDevis(); // Assurez-vous que le tableau de devis est à jour
+  displayCartInDevisModal(); // Remplissez le tableau de la popup avec les données du devis
+  $('#successModal').modal('show'); // Affichez la popup
+});
+ // Appeler init une fois que la page est chargée
+ window.addEventListener("load", init);
+
+    </script>
 </body>
 
 </html>
