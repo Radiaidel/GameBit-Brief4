@@ -113,9 +113,6 @@ function createElements() {
     });
 
 
-
-
-
     let btn = document.createElement('button');
     btn.type = "button";
     btn.innerHTML = "Add To Cart";
@@ -147,26 +144,6 @@ function createElements() {
 /************************************************************************************************* */
 
 
-
-function createDropdown(options, optionType) {
-  var dropdown = document.createElement('select');
-  dropdown.name = optionType;
-  dropdown.id = optionType;
-
-  var defaultOption = document.createElement('option');
-  defaultOption.value = "";
-  defaultOption.textContent = "Sélectionnez une option pour " + optionType;
-  dropdown.appendChild(defaultOption);
-
-  for (var option in options) {
-    var optionElement = document.createElement('option');
-    optionElement.value = option;
-    optionElement.textContent = option + ' - ' + options[option];
-    dropdown.appendChild(optionElement);
-  }
-
-  return dropdown;
-}
 
 
 function CustomizeFunc(productId) {
@@ -201,48 +178,100 @@ function CustomizeFunc(productId) {
     carouselInner.appendChild(carouselItem);
   });
 
-  var featuresList = document.querySelector('.features-list');
 
-  for (var optionType in product.Options) {
-    var dropdown = createDropdown(product.Options[optionType], optionType);
-    featuresList.appendChild(dropdown);
-  
-    dropdown.addEventListener('mouseenter', function () {
-      var optionType = this.name;
-      var optionValue = this.value;
-      var subOptions = product.Options[optionType][optionValue];
-  
-      if (subOptions) {
-        // Supprimer les options précédentes du menu déroulant
-        this.querySelectorAll('option[data-sub-option]').forEach(function (subOption) {
-          subOption.remove();
-        });
-  
-        var optgroup = document.createElement('optgroup');
-        optgroup.label = "Sous-options pour " + optionValue;
-  
-        for (var subOption in subOptions) {
-          var subOptionElement = document.createElement('option');
-          subOptionElement.value = subOption;
-          subOptionElement.textContent = subOption + ' - ' + subOptions[subOption];
-          subOptionElement.setAttribute('data-sub-option', 'true');
-          optgroup.appendChild(subOptionElement);
-        }
-  
-        this.appendChild(optgroup);
-      }
-    });
-  
-    dropdown.addEventListener('mouseleave', function () {
-      this.querySelectorAll('option[data-sub-option]').forEach(function (subOption) {
-        subOption.remove();
-      });
-    });
+  var minusBtn = document.getElementById('minusBtn');
+  var plusBtn = document.getElementById('plusBtn');
+  var quantity = 1;
+  var quantityElement = document.getElementById('quantity');
+  var priceElement = document.getElementById('price');
+
+  function updateQuantityAndPrice(initialPrice) {
+    // product.Price = initialPrice * quantity;
+    quantityElement.textContent = quantity;
+    priceElement.textContent = '$' + (initialPrice * quantity);
   }
+  minusBtn.addEventListener('click', function () {
+    if (quantity > 1) {
+      quantity--;
+      updateQuantityAndPrice(product.Price);
+    }
+  });
+
+  plusBtn.addEventListener('click', function () {
+    quantity++;
+    updateQuantityAndPrice(product.Price);
+  });
+
+
+  updateQuantityAndPrice(product.Price);
+
+  displayProductFeatures(product);
+
 }
 
 
+  function updatePrice(product) {
+    var selectedOptions = document.querySelectorAll('.features-list select');
+    var newPrice = product.Price;
+      selectedOptions.forEach(function (select) {
+     
 
+        if (select.selectedIndex !== -1) {
+        
+            var selectedText = select.options[select.selectedIndex].text;
+            var selectedValue = parseFloat(selectedText.split(' - ')[1]);
+                        console.log(selectedValue);
+            if (!isNaN(selectedValue)) {
+                newPrice += selectedValue;
+            }
+        }
+    });
+
+    var priceElement = document.getElementById('price');
+    if (priceElement) {
+        priceElement.textContent = '$' + newPrice.toFixed(2);
+    }
+  }
+
+
+  function displayProductFeatures(product) {
+    var featuresList = document.querySelector('.features-list');
+    featuresList.innerHTML = ''; 
+
+    for (var option in product.Options) {
+        var optionList = document.createElement('select');
+        optionList.name = option;
+
+        var defaultOption = document.createElement('option');
+        defaultOption.text = option;
+        optionList.add(defaultOption);
+
+        if (typeof product.Options[option] === 'object') {
+            for (var subOption in product.Options[option]) {
+                if (typeof product.Options[option][subOption] === 'object') {
+                    var optGroup = document.createElement('optgroup');
+                    optGroup.label = subOption;
+
+                    for (var subSubOption in product.Options[option][subOption]) {
+                        var subOptionElement = document.createElement('option');
+                        subOptionElement.text = subSubOption + ' - ' +product.Options[option][subOption][subSubOption];
+                        optGroup.appendChild(subOptionElement);
+                    }
+
+                    optionList.add(optGroup);
+                } else {
+                    var subOptionElement = document.createElement('option');
+                    subOptionElement.text = subOption + ' - ' + product.Options[option][subOption];
+                    optionList.add(subOptionElement);
+                }
+            }
+        }
+        optionList.addEventListener('change', function () {
+          updatePrice(product);
+      });        
+      featuresList.appendChild(optionList);
+    }
+  }
 
 
 document.getElementById("topCategoryLink").addEventListener("click", () => displayCategoryProducts("Headset"));
@@ -251,23 +280,22 @@ document.getElementById("laptopPcCategoryLink").addEventListener("click", () => 
 document.getElementById("headphoneCategoryLink").addEventListener("click", () => displayCategoryProducts("Keyboard"));
 
 function displayCategoryProducts(category) {
-    const catCards = document.getElementById("cat-cards");
-    catCards.innerHTML = ""; 
+  const catCards = document.getElementById("cat-cards");
+  catCards.innerHTML = "";
 
-    const categoryProducts = products.filter(product => product.Category === category);
+  const categoryProducts = products.filter(product => product.Category === category);
 
-    for (let i = 0; i < 3 && i < categoryProducts.length; i++) {
-        const product = categoryProducts[i];
-        const productCard = createProductCard(product);
-        catCards.appendChild(productCard);
-    }
+  for (let i = 0; i < 3 && i < categoryProducts.length; i++) {
+    const product = categoryProducts[i];
+    const productCard = createProductCard(product);
+    catCards.appendChild(productCard);
+  }
 }
 
 function createProductCard(product) {
 
   const card = document.createElement("div");
-    card.className = "widthc d-flex flex-column justify-content-center bgc mt-4 mb-4 rounded-4 card py-4";
-
+  card.className = "widthc d-flex flex-column justify-content-center bgc mt-4 mb-4 rounded-4 card py-4";
 
   let img = document.createElement("img");
   img.src = product.Images[0];
@@ -293,6 +321,7 @@ function createProductCard(product) {
   let btns = document.createElement('div');
   btns.classList = "d-flex flex-row justify-content-center gap-4";
 
+
   let btnOutline = document.createElement('button');
   btnOutline.type = "button";
   btnOutline.innerHTML = "Customizee";
@@ -305,14 +334,12 @@ function createProductCard(product) {
 
 
 
-
-
   let btn = document.createElement('button');
   btn.type = "button";
   btn.innerHTML = "Add To Cart";
   btn.classList = "btn btn-add rounded-5";
   btn.addEventListener("click", () => {
-    addToCart(elem);
+    addToCart(product);
   })
 
   card.appendChild(img);
@@ -327,40 +354,8 @@ function createProductCard(product) {
   btns.appendChild(btn);
 
 
-    return card;
+  return card;
 }
-
-
-
-$(document).ready(function () {
-  $('#minusBtn').click(function () {
-    var quantity = parseInt($('#quantity').text());
-    if (quantity > 1) {
-      $('#quantity').text(quantity - 1);
-    }
-  });
-
-  $('#plusBtn').click(function () {
-    var quantity = parseInt($('#quantity').text());
-    $('#quantity').text(quantity + 1);
-  });
-
-  $('#quantity').change(function () {
-    var quantity = parseInt($(this).text());
-    var price = 9.99; 
-    $('#price').text((price * quantity).toFixed(2));
-  });
-});
-
-
-
-
-
-
-
-
-
-
 
 
 
