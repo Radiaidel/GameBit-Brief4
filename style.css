@@ -352,15 +352,25 @@ form {
     overflow-x: hidden;
 }
 #c-btns{
-    padding: 20px;
+    /* padding: 20px; */
     height: 13%;
     /* background-color: #E95555; */
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.counter button{
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background-color: #00FF10;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+}
 #c-btns a{
-    width: 47%;
+    width: 48%;
     border: #00FF10 2px solid;
     border-radius: 10px;
     text-align: center;
@@ -422,8 +432,29 @@ footer{
 .hi{
     height: 25px !important;
 }
+.modal-content {
+    background-color: #252422;
+}
 
+.modal-header {
+    border-bottom: none;
+}
 
+.modal-title {
+    color: white;
+}
+
+.modal-body {
+    color: white;
+}
+
+.order-number {
+    color: #55E95E;
+}
+.product-image {
+    width: 50px; /* Ajustez la largeur selon vos besoins */
+    height: auto; /* Ajustez la hauteur selon vos besoins */
+  }
 @media screen and (max-width:700px){
     #small-about{
         flex-direction: column;
