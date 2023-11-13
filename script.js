@@ -3,6 +3,9 @@ let cart = [];
 let itemsPerPage = 8;
 // let currentPage = 1;
 let cards = [];
+let storedCart = [];
+let priceT = 0;
+
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -152,7 +155,13 @@ function CustomizeFunc(productId) {
   var modalTitle = document.querySelector('.modal-title');
   var modalDescription = document.querySelector('.modal-description');
   var modalPrice = document.querySelector('#price');
-  var carouselInner = document.querySelector('.carousel-inner');
+  var carouselInner = document.querySelector('.product');
+var addcart=document.querySelector('#addToCart');
+addcart.addEventListener("click", () => {
+  addToCart(product);
+})
+
+
 
 
   modalTitle.textContent = product.Name;
@@ -404,73 +413,144 @@ function searchById(array, id) {
   return null;
 }
 //test
-const foundProduct = searchById(products, "HD001");
-if (foundProduct) {
-  console.log("Product found:", foundProduct);
-} else {
-  console.log("Product with ID", "HD001", "not found.");
+// const foundProduct = searchById(products, "HD001");
+// if (foundProduct) {
+//   console.log("Product found:", foundProduct);
+// } else {
+//   console.log("Product with ID", "HD001", "not found.");
+// }
+
+
+function addToCart(element) {
+
+  if (cart.includes(element)) {
+    element.Count++;
+    localStorage.setItem("cart",JSON.stringify(cart));
+
+  }else{
+    element.Count = 1;
+    cart.push(element);
+    localStorage.setItem("cart",JSON.stringify(cart));
+  }
+  updateCartDisplay();
 }
 
-function removeProductFromCart(productId) {
-  const productIndex = cart.findIndex((product) => product.ID === productId);
-  if (productIndex !== -1) {
-    cart.splice(productIndex, 1);
-    console.log(`Produit avec l'ID ${productId} supprimé du panier.`);
-  } else {
-    console.log(`Produit avec l'ID ${productId} non trouvé dans le panier.`);
+function updateCartDisplay() {
+  const cartItemsContainer = document.getElementById("cart-items");
+  cartItemsContainer.innerHTML = '';
+
+  storedCart = JSON.parse(localStorage.getItem("cart"));
+
+  storedCart.forEach((elem, index) => {
+    const card = document.createElement("div");
+    card.classList = `item d-flex gap-1 my-2 color8 rounded-3 py-3 justify-content-between px-3`;
+
+    const imgDiv = document.createElement('div');
+    imgDiv.classList = "w-25 px-2 rounded-3 color7";
+
+    const img = document.createElement("img");
+    img.src = elem.Images[0];
+    img.alt = elem.Name;
+    img.classList = "w-100 h-100 rounded-1";
+
+    const textDiv = document.createElement('div');
+    textDiv.classList = "w-75 ms-3";
+
+    const title = document.createElement("h1");
+    title.innerHTML = elem.Name;
+    title.classList = "fs-5 m-0 text-white";
+
+    const description = document.createElement("p");
+    description.innerHTML = elem.Category;
+    description.classList = "text-white my-2";
+
+    const miniContainer = document.createElement('div');
+    miniContainer.classList = "d-flex justify-content-between hi";
+
+    const counter = document.createElement('div');
+    counter.classList = "d-flex gap-2 counter";
+
+    const minus = document.createElement("button");
+    minus.innerHTML = "-";
+    minus.addEventListener("click", () => {
+      removeOneFromCart(index);
+    });
+
+    const count = document.createElement('p');
+    count.innerHTML = elem.Count;
+    count.classList = "text-white";
+
+    const add = document.createElement("button");
+    add.innerHTML = "+";
+    add.addEventListener("click", () => {
+      addCount(index);
+    });
+
+    const priceContainer = document.createElement("div");
+    priceContainer.classList = "d-flex align-items-baseline fs-5";
+
+    const price = document.createElement('p');
+    price.innerHTML = "$" + totalElem(elem);
+    price.classList = "text-white me-1";
+
+    const removeButton = document.createElement('button');
+    removeButton.classList= "bi bi-trash3 text-danger bg-transparent border border-0 fs-5";
+    removeButton.addEventListener("click", () => {
+      removeProductFromCart(index);
+    });
+
+    card.appendChild(imgDiv);
+    card.appendChild(textDiv);
+    imgDiv.appendChild(img);
+    textDiv.appendChild(title);
+    textDiv.appendChild(description);
+    textDiv.appendChild(miniContainer);
+    miniContainer.appendChild(counter);
+    counter.appendChild(minus);
+    counter.appendChild(count);
+    counter.appendChild(add);
+    miniContainer.appendChild(priceContainer);
+    priceContainer.appendChild(price);
+    priceContainer.appendChild(removeButton);
+
+    cartItemsContainer.appendChild(card);
+  });
+}
+
+function removeProductFromCart(index) {
+  cart.splice(index, 1);
+  localStorage.setItem("cart",JSON.stringify(cart));
+  updateCartDisplay();
+}
+
+function addCount(index) {
+  cart[index].Count++;
+  localStorage.setItem("cart",JSON.stringify(cart));
+
+  updateCartDisplay();
+}
+
+function removeOneFromCart(index) {
+  cart[index].Count--;
+  localStorage.setItem("cart",JSON.stringify(cart));
+
+  if(cart[index].Count == 0){
+    removeProductFromCart(index);
+    localStorage.setItem("cart",JSON.stringify(cart));
+  }else{
+    updateCartDisplay();
   }
 }
 
-
-function addToCart(elem) {
-  let Items = document.getElementById("cart-items")
-  let card = document.createElement("div");
-  card.classList = `card`;
-
-  let img = document.createElement("img");
-  img.src = elem.Images[0];
-  img.alt = elem.Name;
-
-  let title = document.createElement("h4");
-  title.innerHTML = elem.Name;
-  title.classList = "card-title";
-
-  let description = document.createElement("p");
-  description.innerHTML = elem.Description;
-  description.classList = "card-text";
-
-  let price = document.createElement('span');
-  price.innerHTML = "$" + elem.Price;
-  price.classList = "price";
-
-  let btns = document.createElement('div');
-  btns.classList = "price";
-
-  let btnOutline = document.createElement('button');
-  btnOutline.type = "button";
-  btnOutline.innerHTML = "Personalize";
-  btnOutline.classList = "btn btn-outline-success";
-
-  let btn = document.createElement('button');
-  btn.type = "button";
-  btn.innerHTML = "Add To Cart";
-  btn.classList = "btn btn-success";
-  btn.addEventListener("click", () => {
-    addToCart(elem);
-  })
-
-  card.appendChild(img);
-  card.appendChild(title);
-  card.appendChild(description);
-  card.appendChild(price);
-  card.appendChild(btns);
-
-
-  btns.appendChild(btnOutline);
-  btns.appendChild(btn);
-
-  Items.appendChild(card);
+function totalElem(elem) {
+  let price = elem.Count * elem.Price;
+  let priceFix = price.toFixed(2);
+  priceT += priceFix;
+  return priceFix;
 }
+
+// Call updateCartDisplay initially to display any items that might already be in the cart
+updateCartDisplay();
 
 function resetForm() {
   var form = document.getElementById("contactForm");
@@ -553,10 +633,10 @@ function validateForm(event) {
     return false; // Le formulaire n'est pas valide
   }
 
-  // Le formulaire est valide,  la popup 
-  var modalContent = document.getElementById("modal-content");
-  modalContent.innerHTML = "<span class='text'>Prénom :</span> " + firstName + "&nbsp;<span class='blue-text'>Nom de famille :</span> " + lastName + "<br><span class='text'>Email :</span> " + email + "<br><span class='text'>Téléphone :</span> " + phone + "<br><span class='text'>Message :</span> " + message;
-
+ // Le formulaire est valide,  la popup 
+ var modalContent = document.getElementById("modal-content");
+ modalContent.innerHTML = "<span class='text'>Prénom :</span> " + firstName + "&nbsp &nbsp &nbsp;<span class='blue-text'>Nom de famille :</span> " + lastName + "<br><span class='text'>Email :</span> " + email + "<br><span class='text'>Téléphone :</span> " + phone + "<br><span class='text'>Message :</span> " + message;
+ 
   // Afficher la popup
   var myModal = new bootstrap.Modal(document.getElementById('successModal'));
   myModal.show();
@@ -571,14 +651,6 @@ function openCart() {
   if (document.getElementById("mySidenav").style.width = "250px") {
     closeNav();
   }
-}
-
-function calculateTotal() {
-  let total = 0;
-  for (const elem of cart) {
-    total += elem.Price * elem.quantity;
-  }
-  return total;
 }
 
 window.addEventListener("DOMContentLoaded", () => {
