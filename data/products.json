@@ -8,8 +8,15 @@
     "Color": "Black",
     "Count": 0,
     "Rate": "<i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i>",
-    "QTE": 10,
-    "Images": ["../images/produits/p1-1.png"]
+    "QTE": 1,
+    "Images": ["../images/produits/p1-1.png"],
+    "Options": {
+      "Color": {
+        "Black": 0,
+        "White": 10,
+        "RGB": 20
+      }
+    }
   },
   {
     "ID": "MS001",
@@ -20,25 +27,27 @@
     "Color": "Black",
     "Count": 0,
     "Rate": "<i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i>",
-    "QTE": 15,
+    "QTE": 1,
     "Images": [
       "../images/produits/p2-1-c2.webp",
       "../images/produits/p2-2-c2.webp",
       "../images/produits/p2-3-c2.webp",
       "../images/produits/p2-4-c2.webp"
     ],
-    "Options": [
-      {
-        "Color": "Blue",
-        "Images": [
-          "../images/produits/p2-1-c1.webp",
-          "../images/produits/p2-2-c1.webp",
-          "../images/produits/p2-3-c1.webp",
-          "../images/produits/p2-4-c1.webp"
-        ],
-        "Price": 9.99
+    "Options": {
+      "DPI": {
+        "800": 0,
+        "1200": 10,
+        "2400": 20,
+        "3600": 30
+      },
+      "Color": {
+        "RGB": 0,
+        "Blue": 5,
+        "Red": 5,
+        "Green": 5
       }
-    ]
+    }
   },
   {
     "ID": "GC001",
@@ -50,7 +59,7 @@
     "Count": 0,
     "Rate": "<i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i>",
 
-    "QTE": 5,
+    "QTE": 1,
     "Images": [
       "../images/produits/p3-1.png",
       "../images/produits/p3-2.png",
@@ -72,7 +81,19 @@
       "../images/produits/p4-1.png",
       "../images/produits/p4-2.png",
       "../images/produits/p4-3.png"
-    ]
+    ],
+    "Options": {
+      "RefreshRate": {
+        "60Hz": 0,
+        "144Hz": 50,
+        "240Hz": 100
+      },
+      "Size": {
+        "24-inch": 0,
+        "27-inch": 30,
+        "32-inch": 50
+      }
+    }
   },
   {
     "ID": "HS001",
@@ -84,25 +105,24 @@
     "Count": 0,
     "Rate": "<i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i>",
 
-    "QTE": 12,
+    "QTE": 1,
     "Images": [
       "../images/produits/p5-1-c2.webp",
       "../images/produits/p5-2-c2.webp",
       "../images/produits/p5-3-c2.webp",
       "../images/produits/p5-4-c2.webp"
     ],
-    "Options": [
-      {
-        "Color": "White",
-        "Images": [
-          "../images/produits/p5-1-c1.webp",
-          "../images/produits/p5-2-c1.webp",
-          "../images/produits/p5-3-c1.webp",
-          "../images/produits/p5-4-c1.webp"
-        ],
-        "Price": -5.99
+    "Options": {
+      "Color": {
+        "Black": 0,
+        "White": 10,
+        "RGB": 20
+      },
+      "Wireless": {
+        "No": 0,
+        "Yes": 30
       }
-    ]
+    }
   },
   {
     "ID": "VG001",
@@ -132,7 +152,59 @@
       "/images/produits/p7-1.png",
       "../images/produits/p7-2.png ",
       "../images/produits/p7-3.png"
-    ]
+    ],
+    "Options": {
+      "Memory": {
+        "250gb": 0,
+        "500gb": 50,
+        "1tb": 100,
+        "2tb": 200,
+        "3tb": 300
+      },
+      "GraphicsCard": {
+        "Nvidia": {
+          "RTX 4090": 500,
+          "RTX 4070": 400,
+          "GeForce RTX 4060": 300,
+          "GeForce RTX 4080": 450,
+          "RTX 4060 Ti": 350
+        },
+        "AMD": {
+          "Radeon RX 7900 XTX": 450,
+          "Radeon RX 7600": 350,
+          "Radeon RX 7800 XT": 400,
+          "Radeon RX 7900 XT": 500,
+          "Radeon RX 6700 XT": 380
+        },
+        "Intel": {
+          "Arc A750": 400,
+          "Arc A380": 350
+        }
+      },
+      "Processor": {
+        "AMD": {
+          "Ryzen 5 7600": 200,
+          "Ryzen 7 7800X3D": 300,
+          "Ryzen 7 5800X3D": 280,
+          "Ryzen 9 7950X3D": 350,
+          "Ryzen 5 7600X": 220,
+          "Ryzen 5 5600X": 180,
+          "AMD Ryzen 5 5600G": 250
+        },
+        "Intel": {
+          "Core i3-13100F": 180,
+          "Core i5-13600K": 250,
+          "Core i9-13900K": 350,
+          "Core i7-13700K": 300,
+          "Intel Core i5-13400": 220
+        }
+      },
+      "StorageType": {
+        "HDD": 0,
+        "SSD": 50
+        
+      }
+    }
   },
   {
     "ID": "KB002",
@@ -143,9 +215,15 @@
     "Color": "Black",
     "Count": 0,
     "Rate": "<i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i>",
-
-    "QTE": 7,
-    "Images": ["../images/produits/p8-1.png"]
+    "QTE": 1,
+    "Images": ["../images/produits/p8-1.png"],
+    "Options": {
+      "Color": {
+        "Black": 0,
+        "White": 10,
+        "RGB": 20
+      }
+    }
   },
   {
     "ID": "MS002",
@@ -166,7 +244,21 @@
       "../images/produits/p9-4.png",
       "../images/produits/p9-4.png",
       "../images/produits/p9-5.png"
-    ]
+    ],
+    "Options": {
+      "DPI": {
+        "800": 0,
+        "1200": 10,
+        "2400": 20,
+        "3600": 30
+      },
+      "Color": {
+        "RGB": 0,
+        "Blue": 5,
+        "Red": 5,
+        "Green": 5
+      }
+    }
   },
   {
     "ID": "PC002",
@@ -183,7 +275,59 @@
       "../images/produits/p10-1.png",
       "../images/produits/p10-2.png",
       "../images/produits/p10-3.png"
-    ]
+    ],
+    "Options": {
+      "Memory": {
+        "250gb": 0,
+        "500gb": 50,
+        "1tb": 100,
+        "2tb": 200,
+        "3tb": 300
+      },
+      "GraphicsCard": {
+        "Nvidia": {
+          "RTX 4090": 500,
+          "RTX 4070": 400,
+          "GeForce RTX 4060": 300,
+          "GeForce RTX 4080": 450,
+          "RTX 4060 Ti": 350
+        },
+        "AMD": {
+          "Radeon RX 7900 XTX": 450,
+          "Radeon RX 7600": 350,
+          "Radeon RX 7800 XT": 400,
+          "Radeon RX 7900 XT": 500,
+          "Radeon RX 6700 XT": 380
+        },
+        "Intel": {
+          "Arc A750": 400,
+          "Arc A380": 350
+        }
+      },
+      "Processor": {
+        "AMD": {
+          "Ryzen 5 7600": 200,
+          "Ryzen 7 7800X3D": 300,
+          "Ryzen 7 5800X3D": 280,
+          "Ryzen 9 7950X3D": 350,
+          "Ryzen 5 7600X": 220,
+          "Ryzen 5 5600X": 180,
+          "AMD Ryzen 5 5600G": 250
+        },
+        "Intel": {
+          "Core i3-13100F": 180,
+          "Core i5-13600K": 250,
+          "Core i9-13900K": 350,
+          "Core i7-13700K": 300,
+          "Intel Core i5-13400": 220
+        }
+      },
+      "StorageType": {
+        "HDD":  0,
+        "SSD": 50
+        
+      }
+    }
   },
   {
     "ID": "CT001",
@@ -278,16 +422,23 @@
     "Count": 0,
     "Rate": "<i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i>",
 
-    "QTE": 14,
-    "option": {
-      "color": "Black",
-      "size": "Large"
-    },
+    "QTE": 1,
     "Images": [
       "../images/produits/p11-1-c1.png",
       "../images/produits/p11-2-c1.png",
       "../images/produits/p11-3-c1.png"
-    ]
+    ],
+    "Options": {
+      "Color": {
+        "Black": 0,
+        "White": 10,
+        "RGB": 20
+      },
+      "Wireless": {
+        "No": 0,
+        "Yes": 30
+      }
+    }
   },
   {
     "ID": "VG002",
@@ -337,7 +488,19 @@
       "../images/produits/HD002-1-CB.png",
       "../images/produits/HD002-2-CB.png",
       "../images/produits/HD002-3-CB.png"
-    ]
+    ],
+    "Options": {
+      "RefreshRate": {
+        "60Hz": 0,
+        "144Hz": 50,
+        "240Hz": 100
+      },
+      "Size": {
+        "24-inch": 0,
+        "27-inch": 30,
+        "32-inch": 50
+      }
+    }
   },
   {
     "ID": "KB003",
@@ -349,12 +512,19 @@
     "Count": 0,
     "Rate": "<i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i><i class='bi bi-star-fill'></i>",
 
-    "QTE": 9,
+    "QTE": 1,
     "Images": [
       "../images/produits/KB003-1-cb.png",
       "../images/produits/KB003-2-cb.png",
       "../images/produits/KB003-3-cb.png"
-    ]
+    ],
+    "Options": {
+      "Color": {
+        "Black": 0,
+        "White": 10,
+        "RGB": 20
+      }
+    }
   },
   {
     "ID": "MS003",
@@ -371,6 +541,20 @@
       "../images/produits/MS003-1-CB.png",
       "../images/produits/MS003-2-CB.png",
       "../images/produits/MS003-3-CB.png"
-    ]
+    ],
+    "Options": {
+      "DPI": {
+        "800": 0,
+        "1200": 10,
+        "2400": 20,
+        "3600": 30
+      },
+      "Color": {
+        "RGB": 0,
+        "Blue": 5,
+        "Red": 5,
+        "Green": 5
+      }
+    }
   }
 ]
